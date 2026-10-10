@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hadong-flood-lab
+    runtime: node
+    plan: free
+    buildCommand: node --check server.mjs
+    startCommand: node server.mjs
+    healthCheckPath: /
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_VERSION
+        value: 24

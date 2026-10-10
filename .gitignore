@@ -1,0 +1,11 @@
+node_modules/
+.venv/
+__pycache__/
+ml/artifacts/
+*.log
+
+data/private/
+data/observations*.csv
+
+# Local browser verification output
+/artifacts/

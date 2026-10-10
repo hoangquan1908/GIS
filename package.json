@@ -1,0 +1,16 @@
+{
+  "name": "hadong-flood-lab",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "data": "node scripts/download-data.mjs",
+    "sync:static": "node scripts/sync-static.mjs",
+    "test:browser": "node scripts/verify-browser.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

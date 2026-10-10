@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-16T05:48:01.610804+00:00",
+  "task": "retrospective_rainfall_next_3h",
+  "status": "research_only",
+  "flood_model_status": "blocked_missing_verified_labels",
+  "target": "Sum of ERA5 precipitation at t+1, t+2, t+3 hours, mm",
+  "source_kind": "ERA5 reanalysis, NOT station observations or archived issue-time forecasts",
+  "selection_metric": "2024 validation MAE; no tuning on 2025 holdout",
+  "selected_ai": "hist_gradient_boosting_squared_error",
+  "selected_baseline": "persistence_3h",
+  "selected_overall": "hist_gradient_boosting_squared_error",
+  "features": [
+    "rain_now",
+    "rain_lag1",
+    "rain_lag2",
+    "rain_sum3",
+    "rain_sum6",
+    "rain_sum12",
+    "rain_sum24",
+    "temperature",
+    "humidity",
+    "pressure",
+    "hour_sin",
+    "hour_cos",
+    "year_sin",
+    "year_cos"
+  ],
+  "split": {
+    "train": {
+      "rows": 35038,
+      "start": "2020-01-01T23:00:00+07:00",
+      "end": "2023-12-31T20:00:00+07:00",
+      "target_end": "2023-12-31T23:00:00+07:00"
+    },
+    "validation": {
+      "rows": 8781,
+      "start": "2024-01-01T00:00:00+07:00",
+      "end": "2024-12-31T20:00:00+07:00",
+      "target_end": "2024-12-31T23:00:00+07:00"
+    },
+    "test": {
+      "rows": 8757,
+      "start": "2025-01-01T00:00:00+07:00",
+      "end": "2025-12-31T20:00:00+07:00",
+      "target_end": "2025-12-31T23:00:00+07:00"
+    }
+  },
+  "validation_metrics": {
+    "dry_baseline": {
+      "mae_mm": 0.7590365562008883,
+      "rmse_mm": 2.869867685223705,
+      "bias_mm": -0.7590365562008883,
+      "wet_mae_mm": 4.354423791821562,
+      "wet_samples": 1345,
+      "heavy_samples": 111,
+      "heavy_recall": 0.0,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 111
+    },
+    "persistence_3h": {
+      "mae_mm": 0.6334813802528187,
+      "rmse_mm": 2.077041381308938,
+      "bias_mm": -2.2938413875711082e-17,
+      "wet_mae_mm": 2.931672862453532,
+      "wet_samples": 1345,
+      "heavy_samples": 111,
+      "heavy_recall": 0.45045045045045046,
+      "heavy_precision": 0.45045045045045046,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 61,
+      "heavy_missed": 61
+    },
+    "seasonal_mean": {
+      "mae_mm": 0.9473043812785867,
+      "rmse_mm": 2.7263081101784556,
+      "bias_mm": -0.16114391872699593,
+      "wet_mae_mm": 3.5102658545394405,
+      "wet_samples": 1345,
+      "heavy_samples": 111,
+      "heavy_recall": 0.0,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 111
+    },
+    "hist_gradient_boosting_squared_error": {
+      "mae_mm": 0.5683165362510021,
+      "rmse_mm": 1.9042588327175676,
+      "bias_mm": -0.03795548213461286,
+      "wet_mae_mm": 2.3770874899810863,
+      "wet_samples": 1345,
+      "heavy_samples": 111,
+      "heavy_recall": 0.3783783783783784,
+      "heavy_precision": 0.6774193548387096,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 20,
+      "heavy_missed": 69
+    },
+    "hist_gradient_boosting_poisson": {
+      "mae_mm": 0.5705639140043828,
+      "rmse_mm": 1.9635254894642358,
+      "bias_mm": -0.05966442264753702,
+      "wet_mae_mm": 2.4278971404704843,
+      "wet_samples": 1345,
+      "heavy_samples": 111,
+      "heavy_recall": 0.25225225225225223,
+      "heavy_precision": 0.6222222222222222,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 17,
+      "heavy_missed": 83
+    }
+  },
+  "test_metrics": {
+    "dry_baseline": {
+      "mae_mm": 0.7076396026036315,
+      "rmse_mm": 2.1947428544883913,
+      "bias_mm": -0.7076396026036315,
+      "wet_mae_mm": 3.7799725651577503,
+      "wet_samples": 1458,
+      "heavy_samples": 99,
+      "heavy_recall": 0.0,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 99
+    },
+    "persistence_3h": {
+      "mae_mm": 0.6129496402877698,
+      "rmse_mm": 1.8106141573545798,
+      "bias_mm": -6.862413141134004e-16,
+      "wet_mae_mm": 2.5533607681755837,
+      "wet_samples": 1458,
+      "heavy_samples": 99,
+      "heavy_recall": 0.42424242424242425,
+      "heavy_precision": 0.42424242424242425,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 57,
+      "heavy_missed": 57
+    },
+    "seasonal_mean": {
+      "mae_mm": 0.9035991572229506,
+      "rmse_mm": 2.0319541395811207,
+      "bias_mm": -0.10885959933809501,
+      "wet_mae_mm": 2.956088639915383,
+      "wet_samples": 1458,
+      "heavy_samples": 99,
+      "heavy_recall": 0.0,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 99
+    },
+    "hist_gradient_boosting_squared_error": {
+      "mae_mm": 0.5377494061305946,
+      "rmse_mm": 1.4359572370977054,
+      "bias_mm": -0.025651068917204103,
+      "wet_mae_mm": 2.041091091033896,
+      "wet_samples": 1458,
+      "heavy_samples": 99,
+      "heavy_recall": 0.32323232323232326,
+      "heavy_precision": 0.6037735849056604,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 21,
+      "heavy_missed": 67
+    },
+    "hist_gradient_boosting_poisson": {
+      "mae_mm": 0.5247098736950584,
+      "rmse_mm": 1.423443664827839,
+      "bias_mm": -0.03442673566687659,
+      "wet_mae_mm": 1.9968265595021404,
+      "wet_samples": 1458,
+      "heavy_samples": 99,
+      "heavy_recall": 0.26262626262626265,
+      "heavy_precision": 0.6666666666666666,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 13,
+      "heavy_missed": 73
+    }
+  },
+  "holdout_mae_gain_vs_baseline_mm": 0.07520023415717514,
+  "holdout_mae_gain_percent": 12.268582802637729,
+  "uncertainty": {
+    "daily_block_bootstrap_repetitions": 500,
+    "mae_gain_mm_95pct": [
+      0.03991496625620563,
+      0.11646955323521135
+    ],
+    "caveat": "Daily blocks approximate serial dependence; storm-level and multi-year validation still needed."
+  },
+  "monthly_test": [
+    {
+      "month": 1,
+      "rows": 744,
+      "mae_mm": 0.06075841171563392,
+      "rmse_mm": 0.23788353658398054,
+      "bias_mm": 0.015879572630962374,
+      "wet_mae_mm": 1.3861463389465412,
+      "wet_samples": 12,
+      "heavy_samples": 0,
+      "heavy_recall": null,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 0
+    },
+    {
+      "month": 2,
+      "rows": 672,
+      "mae_mm": 0.15067388613632873,
+      "rmse_mm": 0.28464618336404557,
+      "bias_mm": 0.026976167721804525,
+      "wet_mae_mm": 0.5559158971574507,
+      "wet_samples": 45,
+      "heavy_samples": 0,
+      "heavy_recall": null,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 0
+    },
+    {
+      "month": 3,
+      "rows": 744,
+      "mae_mm": 0.12207586981357355,
+      "rmse_mm": 0.28172708687477177,
+      "bias_mm": 0.04090616955822728,
+      "wet_mae_mm": 0.7595277399909155,
+      "wet_samples": 32,
+      "heavy_samples": 0,
+      "heavy_recall": null,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 0
+    },
+    {
+      "month": 4,
+      "rows": 720,
+      "mae_mm": 0.5761381245490671,
+      "rmse_mm": 2.1084412394882364,
+      "bias_mm": -0.07581159600660663,
+      "wet_mae_mm": 4.37122498353457,
+      "wet_samples": 66,
+      "heavy_samples": 10,
+      "heavy_recall": 0.3,
+      "heavy_precision": 0.5,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 3,
+      "heavy_missed": 7
+    },
+    {
+      "month": 5,
+      "rows": 744,
+      "mae_mm": 0.8519657038443815,
+      "rmse_mm": 1.8821350450193814,
+      "bias_mm": 0.00335193622638939,
+      "wet_mae_mm": 2.35207504459543,
+      "wet_samples": 177,
+      "heavy_samples": 12,
+      "heavy_recall": 0.25,
+      "heavy_precision": 0.3333333333333333,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 6,
+      "heavy_missed": 9
+    },
+    {
+      "month": 6,
+      "rows": 720,
+      "mae_mm": 1.131202447173873,
+      "rmse_mm": 2.3021752293276125,
+      "bias_mm": -0.17153321054731532,
+      "wet_mae_mm": 2.3766504647186175,
+      "wet_samples": 236,
+      "heavy_samples": 17,
+      "heavy_recall": 0.11764705882352941,
+      "heavy_precision": 0.6666666666666666,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 1,
+      "heavy_missed": 15
+    },
+    {
+      "month": 7,
+      "rows": 744,
+      "mae_mm": 0.8973599580118962,
+      "rmse_mm": 1.603073976584065,
+      "bias_mm": 0.1733186928560964,
+      "wet_mae_mm": 1.8526551240695712,
+      "wet_samples": 207,
+      "heavy_samples": 6,
+      "heavy_recall": 0.0,
+      "heavy_precision": 0.0,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 5,
+      "heavy_missed": 6
+    },
+    {
+      "month": 8,
+      "rows": 744,
+      "mae_mm": 0.9149080158316878,
+      "rmse_mm": 1.7043287604692736,
+      "bias_mm": -0.17254656205290075,
+      "wet_mae_mm": 1.8937878848793306,
+      "wet_samples": 251,
+      "heavy_samples": 16,
+      "heavy_recall": 0.3125,
+      "heavy_precision": 0.7142857142857143,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 2,
+      "heavy_missed": 11
+    },
+    {
+      "month": 9,
+      "rows": 720,
+      "mae_mm": 0.9171937954915773,
+      "rmse_mm": 1.9281984551059,
+      "bias_mm": -0.16206942008405695,
+      "wet_mae_mm": 2.3568947927194883,
+      "wet_samples": 183,
+      "heavy_samples": 29,
+      "heavy_recall": 0.5862068965517241,
+      "heavy_precision": 0.9444444444444444,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 1,
+      "heavy_missed": 12
+    },
+    {
+      "month": 10,
+      "rows": 744,
+      "mae_mm": 0.45311877457567695,
+      "rmse_mm": 1.1925530605045036,
+      "bias_mm": 0.01712890931117013,
+      "wet_mae_mm": 1.8407870640503845,
+      "wet_samples": 120,
+      "heavy_samples": 7,
+      "heavy_recall": 0.2857142857142857,
+      "heavy_precision": 0.4,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 3,
+      "heavy_missed": 5
+    },
+    {
+      "month": 11,
+      "rows": 720,
+      "mae_mm": 0.19911478871134863,
+      "rmse_mm": 0.5056505170962812,
+      "bias_mm": -0.009053085577601608,
+      "wet_mae_mm": 0.847175813310938,
+      "wet_samples": 106,
+      "heavy_samples": 0,
+      "heavy_recall": null,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 0
+    },
+    {
+      "month": 12,
+      "rows": 741,
+      "mae_mm": 0.1612042858211878,
+      "rmse_mm": 0.588388245075999,
+      "bias_mm": 0.0006494777219028082,
+      "wet_mae_mm": 1.8870047554876315,
+      "wet_samples": 23,
+      "heavy_samples": 2,
+      "heavy_recall": 0.0,
+      "heavy_precision": null,
+      "heavy_threshold_mm_3h": 10,
+      "heavy_false_alarms": 0,
+      "heavy_missed": 2
+    }
+  ],
+  "provenance": [
+    {
+      "file": "data/history/era5-2020.json",
+      "sha256": "ed8e94c4e79b58c804c2903b7ae130c84c2db1900b4daad924312027b3dd0b86",
+      "retrieved_at": "2026-09-16T05:46:38.510Z"
+    },
+    {
+      "file": "data/history/era5-2021.json",
+      "sha256": "c08d6af1dbd197e492ebde848f9df5d685769eb2084e18439411565e49a407f8",
+      "retrieved_at": "2026-09-16T05:46:38.783Z"
+    },
+    {
+      "file": "data/history/era5-2022.json",
+      "sha256": "0024bd23db78dc294eb43b7294322f2dcdafbb8f088b948060457486b6a2e03e",
+      "retrieved_at": "2026-09-16T05:46:39.211Z"
+    },
+    {
+      "file": "data/history/era5-2023.json",
+      "sha256": "4be35a25cdaa717c71bd53f552370b20c5e3c5c36923cdd39e60a59379864715",
+      "retrieved_at": "2026-09-16T05:46:39.596Z"
+    },
+    {
+      "file": "data/history/era5-2024.json",
+      "sha256": "2607f14d14d1b521d8205d1272283156281ec9cc729b99ed85d802d49ca55718",
+      "retrieved_at": "2026-09-16T05:46:39.962Z"
+    },
+    {
+      "file": "data/history/era5-2025.json",
+      "sha256": "d5d1daa5701fc8b9630f7b86b29c829ae59454a448e239e858787db23acd6530",
+      "retrieved_at": "2026-09-16T05:46:40.305Z"
+    }
+  ],
+  "software": {
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  },
+  "limitations": [
+    "Model trained on reanalysis available after the event; hindcast experiment, not operational early-warning validation.",
+    "No local flood labels; rainfall skill cannot be reported as flood accuracy.",
+    "One coarse grid location cannot predict street-level inundation.",
+    "No live inference until issue-time data and local observations are validated.",
+    "Predictions for overlapping 3h windows are correlated. Single-year holdout is not proof of generalisation.",
+    "Selected overall model may be a simple baseline; negative gains must be retained."
+  ]
+}

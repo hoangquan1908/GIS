@@ -1,0 +1,12 @@
+import {readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {futureHours} from '../public/risk.js';
+const history=JSON.parse(await readFile(new URL('../data/rainfall-history-2025.json',import.meta.url),'utf8'));
+const forecast=JSON.parse(await readFile(new URL('../data/weather-forecast.json',import.meta.url),'utf8'));
+assert.equal(history.hourly.time.length,8760);
+assert.equal(history.hourly.precipitation.length,8760);
+assert.ok(history.hourly.precipitation.every(x=>typeof x==='number'&&Number.isFinite(x)&&x>=0));
+assert.equal(history.hourly.time[0],'2025-01-01T00:00');
+assert.equal(history.hourly.time.at(-1),'2025-12-31T23:00');
+assert.equal(futureHours(forecast,new Date(forecast.retrieved_at).getTime()).length,24);
+console.log('PASS: 8,760 valid historical hourly rainfall records and 24 forecast hours at retrieval time.');

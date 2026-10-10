@@ -1,0 +1,1 @@
+event_id,site_id,issued_at,target_at,features_available_at,forecast_issued_at,horizon_hours,latitude,longitude,rain_1h_mm,rain_3h_mm,rain_24h_mm,forecast_rain_mm,elevation_m,impervious_fraction,distance_drain_m,flood_depth_cm,flooded,verification_status,observation_source,feature_source,boundary_verified

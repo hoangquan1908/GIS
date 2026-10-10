@@ -1,0 +1,482 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "Các lớp không gian GIS Quận Hà Đông",
+    "description": "Bao gồm lớp đường giao thông, khu dân cư, hồ chứa, sông kênh và mạng cống thoát nước",
+    "crs": "EPSG:4326 - WGS 84"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7950, 20.9880],
+          [105.7876, 20.9856],
+          [105.7802, 20.9780],
+          [105.7745, 20.9715],
+          [105.7708, 20.9678],
+          [105.7630, 20.9615],
+          [105.7582, 20.9575],
+          [105.7450, 20.9470]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Trục Quốc lộ 6: Nguyễn Trãi - Trần Phú - Quang Trung",
+        "road_type": "Trục chính đô thị / Quốc lộ",
+        "width_m": 40,
+        "flood_vulnerable": true,
+        "description": "Tuyến giao thông xương sống nối trung tâm Hà Nội với Hà Đông, có đường sắt đô thị Cát Linh - Hà Đông chạy trên cao."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7860, 20.9900],
+          [105.7780, 20.9840],
+          [105.7735, 20.9815],
+          [105.7600, 20.9740],
+          [105.7480, 20.9670]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Trục Tố Hữu - Lê Văn Lương kéo dài",
+        "road_type": "Trục xuyên tâm",
+        "width_m": 42,
+        "flood_vulnerable": true,
+        "description": "Tuyến đường huyết mạch phía Bắc quận, chạy qua KĐT Mộ Lao, Vạn Phúc và Dương Nội."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7350, 20.9920],
+          [105.7420, 20.9850],
+          [105.7489, 20.9782],
+          [105.7550, 20.9680],
+          [105.7610, 20.9600],
+          [105.7665, 20.9548],
+          [105.7720, 20.9480]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Đường Lê Trọng Tấn (Hà Đông)",
+        "road_type": "Đường vành đai liên khu vực",
+        "width_m": 42,
+        "flood_vulnerable": true,
+        "description": "Tuyến vành đai 3.5 nối Đại lộ Thăng Long qua Geleximco, Dương Nội, Văn Phú ra Quốc lộ 6."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7802, 20.9780],
+          [105.7845, 20.9710],
+          [105.7905, 20.9635],
+          [105.7960, 20.9570],
+          [105.8020, 20.9490]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Đường Phùng Hưng - Cầu Bươu",
+        "road_type": "Đường liên quận",
+        "width_m": 25,
+        "flood_vulnerable": true,
+        "description": "Tuyến kết nối Hà Đông với Thanh Trì, qua Bệnh viện 103 và KĐT Xa La."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7745, 20.9715],
+          [105.7765, 20.9762],
+          [105.7785, 20.9830]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Đường Vạn Phúc - Phố Lụa",
+        "road_type": "Đường đô thị",
+        "width_m": 22,
+        "flood_vulnerable": false,
+        "description": "Tuyến kết nối phố cổ làng nghề dệt lụa Vạn Phúc với đường Tố Hữu và Quang Trung."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7876, 20.9856],
+          [105.7942, 20.9825],
+          [105.7980, 20.9800]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Đường Chiến Thắng (Văn Quán)",
+        "road_type": "Đường khu vực",
+        "width_m": 18,
+        "flood_vulnerable": true,
+        "description": "Tuyến đường chạy ven Học viện An Ninh Nhân Dân sang KĐT Văn Quán."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7780, 20.9670],
+          [105.7742, 20.9632],
+          [105.7680, 20.9590]
+        ]
+      },
+      "properties": {
+        "layer": "roads",
+        "name": "Đường Tô Hiệu - Hà Cầu",
+        "road_type": "Đường trung tâm hành chính",
+        "width_m": 24,
+        "flood_vulnerable": false,
+        "description": "Tuyến đường qua trụ sở Quận ủy - UBND quận Hà Đông và siêu thị Metro."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7890, 20.9780],
+          [105.7960, 20.9780],
+          [105.7970, 20.9720],
+          [105.7910, 20.9710],
+          [105.7890, 20.9780]
+        ]]
+      },
+      "properties": {
+        "layer": "residential",
+        "name": "Khu đô thị Văn Quán",
+        "type": "Khu đô thị kiểu mẫu",
+        "population": 28000,
+        "area_ha": 62,
+        "description": "Khu đô thị lâu năm có mật độ cây xanh cao, bao quanh 2 hồ Văn Quán rộng rãi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7810, 20.9880],
+          [105.7890, 20.9870],
+          [105.7880, 20.9810],
+          [105.7820, 20.9820],
+          [105.7810, 20.9880]
+        ]]
+      },
+      "properties": {
+        "layer": "residential",
+        "name": "Khu đô thị Mộ Lao",
+        "type": "Khu đô thị hiện đại",
+        "population": 22000,
+        "area_ha": 68,
+        "description": "Tập trung các khu chung cư cao tầng Mulberry Lane, Seasons Avenue, Làng Việt Kiều Châu Âu."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7480, 20.9750],
+          [105.7600, 20.9700],
+          [105.7560, 20.9620],
+          [105.7440, 20.9660],
+          [105.7480, 20.9750]
+        ]]
+      },
+      "properties": {
+        "layer": "residential",
+        "name": "Khu đô thị Dương Nội",
+        "type": "Khu đô thị sinh thái",
+        "population": 35000,
+        "area_ha": 197,
+        "description": "Khu đô thị sinh thái xanh phía Tây do Tập đoàn Nam Cường phát triển, có công viên Thiên Văn Học."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7620, 20.9580],
+          [105.7720, 20.9570],
+          [105.7700, 20.9500],
+          [105.7610, 20.9520],
+          [105.7620, 20.9580]
+        ]]
+      },
+      "properties": {
+        "layer": "residential",
+        "name": "Khu đô thị Văn Phú",
+        "type": "Khu đô thị dịch vụ",
+        "population": 20000,
+        "area_ha": 94,
+        "description": "Nằm ngay trung tâm hành chính mới, hạ tầng giao thông ô bàn cờ thông thoáng."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7920, 20.9620],
+          [105.7990, 20.9600],
+          [105.7980, 20.9540],
+          [105.7910, 20.9560],
+          [105.7920, 20.9620]
+        ]]
+      },
+      "properties": {
+        "layer": "residential",
+        "name": "Khu đô thị Xa La",
+        "type": "Khu dân cư cao tầng",
+        "population": 30000,
+        "area_ha": 26,
+        "description": "Gồm các tổ hợp chung cư CT1 đến CT6 và dãy biệt thự liền kề."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7915, 20.9760],
+          [105.7940, 20.9765],
+          [105.7945, 20.9740],
+          [105.7920, 20.9735],
+          [105.7915, 20.9760]
+        ]]
+      },
+      "properties": {
+        "layer": "lakes",
+        "name": "Hồ Văn Quán (Hồ Lớn)",
+        "area_ha": 6.8,
+        "depth_m": 3.2,
+        "water_level_m": 1.4,
+        "capacity_m3": 210000,
+        "description": "Hồ điều hòa trọng yếu của phường Văn Quán, tiếp nhận nước mưa từ đường Nguyễn Khuyến và Chiến Thắng."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7948, 20.9738],
+          [105.7962, 20.9739],
+          [105.7960, 20.9720],
+          [105.7945, 20.9722],
+          [105.7948, 20.9738]
+        ]]
+      },
+      "properties": {
+        "layer": "lakes",
+        "name": "Hồ Văn Quán (Hồ Nhỏ)",
+        "area_ha": 2.1,
+        "depth_m": 2.5,
+        "water_level_m": 1.2,
+        "capacity_m3": 52000,
+        "description": "Hồ vệ tinh kết nối thông với hồ lớn qua cống ngầm đường Nguyễn Khuyến."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7720, 20.9650],
+          [105.7745, 20.9655],
+          [105.7740, 20.9610],
+          [105.7715, 20.9615],
+          [105.7720, 20.9650]
+        ]]
+      },
+      "properties": {
+        "layer": "lakes",
+        "name": "Hồ Đầm Khê (Hà Cầu)",
+        "area_ha": 5.4,
+        "depth_m": 2.8,
+        "water_level_m": 1.1,
+        "capacity_m3": 150000,
+        "description": "Hồ sinh thái và trữ nước trung tâm khu vực Hà Cầu - Tô Hiệu."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [105.7530, 20.9670],
+          [105.7570, 20.9660],
+          [105.7560, 20.9625],
+          [105.7525, 20.9635],
+          [105.7530, 20.9670]
+        ]]
+      },
+      "properties": {
+        "layer": "lakes",
+        "name": "Hồ Bách Hợp Thủy (Công viên Thiên Văn Học)",
+        "area_ha": 12.0,
+        "depth_m": 3.5,
+        "water_level_m": 1.5,
+        "capacity_m3": 420000,
+        "description": "Hồ điều hòa nhân tạo quy mô lớn nhất quận Hà Đông, điều tiết nước mưa cho toàn KĐT Dương Nội."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7870, 20.9950],
+          [105.7850, 20.9880],
+          [105.7820, 20.9800],
+          [105.7810, 20.9730],
+          [105.7830, 20.9660],
+          [105.7880, 20.9590],
+          [105.7940, 20.9520],
+          [105.8010, 20.9420]
+        ]
+      },
+      "properties": {
+        "layer": "rivers",
+        "name": "Sông Nhuệ (Đoạn qua Hà Đông)",
+        "type": "Sông tự nhiên",
+        "length_km": 8.5,
+        "current_water_level_m": 4.85,
+        "warning_level_2_m": 5.0,
+        "warning_level_3_m": 5.8,
+        "description": "Trục tiêu thoát nước chính tự nhiên của khu vực Hà Đông và Tây Nam Hà Nội. Khi nước sông dâng cao, hệ thống cống không thể tự chảy và phải đóng van ngăn tràn ngược."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7740, 20.9720],
+          [105.7650, 20.9700],
+          [105.7530, 20.9660],
+          [105.7420, 20.9630],
+          [105.7365, 20.9612]
+        ]
+      },
+      "properties": {
+        "layer": "rivers",
+        "name": "Kênh dẫn La Khê",
+        "type": "Kênh tiêu hở nhân tạo",
+        "length_km": 4.2,
+        "current_water_level_m": 3.6,
+        "capacity_m3_s": 120,
+        "description": "Kênh chính dẫn nước mưa từ lưu vực trung tâm Hà Đông về Trạm bơm Yên Nghĩa xả ra sông Đáy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7876, 20.9856],
+          [105.7802, 20.9780],
+          [105.7708, 20.9678],
+          [105.7582, 20.9575]
+        ]
+      },
+      "properties": {
+        "layer": "drainage",
+        "name": "Tuyến cống hộp chính Quang Trung - Trần Phú (D2000)",
+        "diameter_mm": 2000,
+        "type": "Cống hộp bê tông cốt thép",
+        "discharge_to": "Trạm bơm Cầu Đơ & Kênh La Khê",
+        "status": "Hoạt động 85% công suất",
+        "description": "Tuyến cống ngầm đường kính lớn dọc dải phân cách trục QL6."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [105.7735, 20.9815],
+          [105.7620, 20.9730],
+          [105.7530, 20.9660]
+        ]
+      },
+      "properties": {
+        "layer": "drainage",
+        "name": "Tuyến cống ngầm Tố Hữu - Kênh La Khê (D1500)",
+        "diameter_mm": 1500,
+        "type": "Cống tròn ly tâm",
+        "discharge_to": "Kênh La Khê",
+        "status": "Hoạt động 90% công suất",
+        "description": "Tiêu thoát nước mặt tuyến đường Tố Hữu và các khu đô thị vệ tinh."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7365, 20.9612]
+      },
+      "properties": {
+        "layer": "drainage",
+        "name": "Trạm bơm Tiêu Yên Nghĩa",
+        "pumps_count": "10 tổ máy",
+        "operating_pumps": "7 tổ máy đang chạy",
+        "capacity_m3_s": 120,
+        "role": "Trạm bơm tiêu lớn nhất miền Bắc, bơm nước từ sông Nhuệ và nội đồng Hà Đông ra sông Đáy chống ngập úng ngập lụt diện rộng."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7725, 20.9685]
+      },
+      "properties": {
+        "layer": "drainage",
+        "name": "Trạm bơm Cầu Đơ",
+        "pumps_count": "4 tổ máy",
+        "operating_pumps": "4/4 tổ máy",
+        "capacity_m3_s": 25,
+        "role": "Bơm tiêu úng cho khu vực nội thị Hà Đông ra sông Nhuệ khi mực nước sông cao hơn cửa cống tự chảy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [105.7582, 20.9575]
+      },
+      "properties": {
+        "layer": "drainage",
+        "name": "Cửa điều tiết xả Ba La",
+        "type": "Cống van lật ngăn triều và cửa xả",
+        "role": "Điều tiết nước từ ngã ba Ba La và KĐT Phú Lương vào mương tiêu La Khê."
+      }
+    }
+  ]
+}
+

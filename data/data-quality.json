@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-16T05:46:40.321Z",
+  "dataset": "ERA5 hourly, one representative grid location near Ha Dong",
+  "grain": "one modelled hour at one requested location",
+  "period": "2020-01-01 / 2025-12-31",
+  "total_rows": 52608,
+  "pass": true,
+  "years": [
+    {
+      "year": 2020,
+      "pass": true,
+      "errors": [],
+      "rows": 8784,
+      "expected_rows": 8784,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 13.6
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 10.9,
+          "max": 39.4
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 30,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 993.6,
+          "max": 1028.6
+        }
+      },
+      "annual_rain_mm": 1990.4,
+      "wet_hours": 2130,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:38.510Z",
+      "file": "history/era5-2020.json",
+      "sha256": "ed8e94c4e79b58c804c2903b7ae130c84c2db1900b4daad924312027b3dd0b86",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2020-01-01&end_date=2020-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    },
+    {
+      "year": 2021,
+      "pass": true,
+      "errors": [],
+      "rows": 8760,
+      "expected_rows": 8760,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 12.3
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 7.7,
+          "max": 39.6
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 28,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 993.2,
+          "max": 1030.7
+        }
+      },
+      "annual_rain_mm": 1625,
+      "wet_hours": 1824,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:38.783Z",
+      "file": "history/era5-2021.json",
+      "sha256": "c08d6af1dbd197e492ebde848f9df5d685769eb2084e18439411565e49a407f8",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2021-01-01&end_date=2021-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    },
+    {
+      "year": 2022,
+      "pass": true,
+      "errors": [],
+      "rows": 8760,
+      "expected_rows": 8760,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 13.6
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 8.8,
+          "max": 37.9
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 25,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 992.3,
+          "max": 1029.9
+        }
+      },
+      "annual_rain_mm": 1874.9,
+      "wet_hours": 2704,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:39.211Z",
+      "file": "history/era5-2022.json",
+      "sha256": "0024bd23db78dc294eb43b7294322f2dcdafbb8f088b948060457486b6a2e03e",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2022-01-01&end_date=2022-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    },
+    {
+      "year": 2023,
+      "pass": true,
+      "errors": [],
+      "rows": 8760,
+      "expected_rows": 8760,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 17.6
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 8.2,
+          "max": 39.7
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 23,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 993.2,
+          "max": 1032.6
+        }
+      },
+      "annual_rain_mm": 1502,
+      "wet_hours": 2167,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:39.596Z",
+      "file": "history/era5-2023.json",
+      "sha256": "4be35a25cdaa717c71bd53f552370b20c5e3c5c36923cdd39e60a59379864715",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2023-01-01&end_date=2023-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    },
+    {
+      "year": 2024,
+      "pass": true,
+      "errors": [],
+      "rows": 8784,
+      "expected_rows": 8784,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 22.4
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 8.8,
+          "max": 39.3
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 33,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 984.6,
+          "max": 1030.1
+        }
+      },
+      "annual_rain_mm": 2221.7,
+      "wet_hours": 2813,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:39.962Z",
+      "file": "history/era5-2024.json",
+      "sha256": "2607f14d14d1b521d8205d1272283156281ec9cc729b99ed85d802d49ca55718",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2024-01-01&end_date=2024-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    },
+    {
+      "year": 2025,
+      "pass": true,
+      "errors": [],
+      "rows": 8760,
+      "expected_rows": 8760,
+      "profiles": {
+        "precipitation": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 0,
+          "max": 13.3
+        },
+        "temperature_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 8.4,
+          "max": 39.9
+        },
+        "relative_humidity_2m": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 24,
+          "max": 100
+        },
+        "surface_pressure": {
+          "missing": 0,
+          "out_of_range": 0,
+          "min": 986.2,
+          "max": 1032.5
+        }
+      },
+      "annual_rain_mm": 2065.6,
+      "wet_hours": 2678,
+      "source_grid": {
+        "latitude": 21,
+        "longitude": 105.75
+      },
+      "retrieved_at": "2026-09-16T05:46:40.305Z",
+      "file": "history/era5-2025.json",
+      "sha256": "d5d1daa5701fc8b9630f7b86b29c829ae59454a448e239e858787db23acd6530",
+      "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2025-01-01&end_date=2025-12-31&hourly=precipitation,temperature_2m,relative_humidity_2m,surface_pressure&models=era5&timezone=Asia%2FBangkok"
+    }
+  ],
+  "flood_labels": 0,
+  "verified_flood_sites": 0,
+  "official_boundary_available": false,
+  "fitness": {
+    "retrospective_rainfall_benchmark": true,
+    "street_level_flood_prediction": false,
+    "operational_early_warning": false
+  },
+  "limitations": [
+    "Reanalysis, not local station observations",
+    "Coarse 0.25 degree grid cannot resolve street-level rainfall",
+    "No verified flood labels, drainage network or official ward boundary",
+    "Completeness does not demonstrate accuracy against ground observations"
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "rep-mu3vlluz",
+    "reporter_name": "Test Citizen",
+    "location_name": "Đường Quang Trung",
+    "coordinates": [
+      105.78,
+      20.97
+    ],
+    "depth_level": "medium",
+    "depth_cm": 28,
+    "photo_url": "",
+    "description": "Ngập nhẹ lối vào ga",
+    "reported_at": "2026-09-16T09:05:54.924Z",
+    "status": "verified",
+    "votes": 1
+  },
+  {
+    "id": "rep-mu3v6hnt",
+    "reporter_name": "Test Citizen",
+    "location_name": "Đường Quang Trung",
+    "coordinates": [
+      105.78,
+      20.97
+    ],
+    "depth_level": "medium",
+    "depth_cm": 28,
+    "photo_url": "",
+    "description": "Ngập nhẹ lối vào ga",
+    "reported_at": "2026-09-16T08:54:09.642Z",
+    "status": "verified",
+    "votes": 1
+  },
+  {
+    "id": "rep-mu3tn61o",
+    "reporter_name": "Test Citizen",
+    "location_name": "Đường Quang Trung",
+    "coordinates": [
+      105.78,
+      20.97
+    ],
+    "depth_level": "medium",
+    "depth_cm": 28,
+    "photo_url": "",
+    "description": "Ngập nhẹ lối vào ga",
+    "reported_at": "2026-09-16T08:11:08.508Z",
+    "status": "verified",
+    "votes": 1
+  },
+  {
+    "id": "rep-001",
+    "reporter_name": "Nguyễn Văn Hùng",
+    "location_name": "Số 142 Nguyễn Khuyến, KĐT Văn Quán",
+    "coordinates": [
+      105.7928,
+      20.9752
+    ],
+    "depth_level": "medium",
+    "depth_cm": 30,
+    "photo_url": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=500&auto=format&fit=crop&q=60",
+    "description": "Nước ngập nửa bánh xe máy trước cổng trường Ban Mai, một số xe máy đi nhanh bị chết máy.",
+    "reported_at": "2026-09-16T14:15:00+07:00",
+    "status": "verified",
+    "votes": 12
+  },
+  {
+    "id": "rep-002",
+    "reporter_name": "Lê Thị Mai",
+    "location_name": "Ngã ba Ba La, lối rẽ QL21B",
+    "coordinates": [
+      105.7585,
+      20.9578
+    ],
+    "depth_level": "very_high",
+    "depth_cm": 48,
+    "photo_url": "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=500&auto=format&fit=crop&q=60",
+    "description": "Nước ngập sâu lút bô xe, các phương tiện đang phải dừng lại trên dốc cầu vượt không dám đi qua.",
+    "reported_at": "2026-09-16T14:22:00+07:00",
+    "status": "verified",
+    "votes": 27
+  },
+  {
+    "id": "rep-003",
+    "reporter_name": "Trần Tuấn Anh",
+    "location_name": "Đường Lê Trọng Tấn, trước cổng KĐT Geleximco khu C",
+    "coordinates": [
+      105.7485,
+      20.9785
+    ],
+    "depth_level": "high",
+    "depth_cm": 38,
+    "photo_url": "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?w=500&auto=format&fit=crop&q=60",
+    "description": "Làn đường gom ngập sâu, rác chặn kín miệng hố ga cạnh trạm dừng xe buýt.",
+    "reported_at": "2026-09-16T14:30:00+07:00",
+    "status": "verified",
+    "votes": 18
+  }
+]
