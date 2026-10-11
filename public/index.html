@@ -43,8 +43,9 @@
       <div class="topbar-actions"><span id="connection-status" class="connection"><i></i> Có kết nối mạng</span><time id="clock"></time><span class="avatar" aria-label="Hà Đông">HĐ</span></div>
     </header>
     <div class="content">
-      <section id="dashboard" aria-labelledby="overview-title">
-        <div class="page-heading"><div><p class="eyebrow">HÀ ĐÔNG FLOOD LAB / TỔNG QUAN</p><h1 id="overview-title">Theo dõi ngập úng Hà Đông<span>.</span></h1><p class="muted">Năm mục chính: bản đồ cảnh báo · dự báo thời tiết · tuyến tránh ngập · báo cáo cộng đồng · giải pháp ứng phó.</p></div><button id="refresh-btn" class="button secondary">↻ <span>Cập nhật dữ liệu</span></button></div>
+      <section id="gis-map-section" class="section-block" aria-labelledby="map-title">
+        <div id="dashboard" class="map-intro">
+<div class="page-heading"><div><p class="eyebrow">HÀ ĐÔNG FLOOD LAB / TỔNG QUAN</p><h1 id="overview-title">Theo dõi ngập úng Hà Đông<span>.</span></h1><p class="muted">Năm mục chính: bản đồ cảnh báo · dự báo thời tiết · tuyến tránh ngập · báo cáo cộng đồng · giải pháp ứng phó.</p></div><button id="refresh-btn" class="button secondary">↻ <span>Cập nhật dữ liệu</span></button></div>
         <div class="overview-banner"><div class="banner-copy"><span class="badge light"><i class="status-dot"></i> KHÔNG GIAN GIS & NGHIÊN CỨU</span><h2>Bản đồ điểm nóng.<br>Cảnh báo ngay trên từng điểm.</h2><p>Bản đồ ngay bên dưới — điểm nguy cơ cao hiện ghi chú cảnh báo ngay trên chấm tròn.</p><a href="#gis-map-section" class="button light-button">Xem bản đồ khu vực <span>↗</span></a><span class="banner-footnote">Dữ liệu mô phỏng luôn được gắn nhãn riêng.</span></div><div class="contour-art" aria-hidden="true"><div class="contour c1"></div><div class="contour c2"></div><div class="contour c3"></div><div class="contour c4"></div><div class="contour c5"></div><span class="map-pin pin-one">●</span><span class="map-pin pin-two">●</span><div class="art-location"><span class="status-dot"></span> HÀ ĐÔNG <small>20.9708° N · 105.7788° E</small></div><span class="art-compass">N<br>↑</span></div></div>
         <div class="kpi-grid">
           <article class="kpi-card"><div class="kpi-top"><span>Địa điểm tham chiếu</span><span class="metric-icon green">◎</span></div><strong id="kpi-sites">—</strong><p>Trong bộ dữ liệu nghiên cứu <a href="#gis-map-section" aria-label="Xem địa điểm">↗</a></p></article>
@@ -53,9 +54,8 @@
           <article class="kpi-card"><div class="kpi-top"><span>Báo cáo của bạn</span><span class="metric-icon purple">▤</span></div><strong id="kpi-reports">—</strong><p>Lưu trên trình duyệt này <a href="#community-section" aria-label="Xem báo cáo">↗</a></p></article>
         </div>
         <div class="notice"><span class="notice-icon">i</span><p><b>Phân biệt dự báo và mô phỏng.</b> Mưa là dự báo khí tượng; độ sâu, vùng lan và tuyến đường là kịch bản minh họa, chưa được kiểm định để cảnh báo thực tế.</p><a href="#sources-section">Chi tiết ↗</a></div>
-      </section>
+        </div>
 
-      <section id="gis-map-section" class="section-block" aria-labelledby="map-title">
         <div class="section-heading"><div><p class="eyebrow">01 / BẢN ĐỒ KHU VỰC</p><h2 id="map-title">Bản đồ cảnh báo ngập Hà Đông <span class="count-badge" id="map-count">—</span></h2></div><div class="button-row"><button id="share-view" class="button secondary small">↗ Chia sẻ bộ lọc</button><button id="locate-btn" class="button secondary small">⌖ Vị trí của tôi</button><button id="reset-map-btn" class="button secondary small">◎ Về trung tâm</button></div></div>
         <div class="map-workspace">
           <div class="map-panel">
@@ -252,6 +252,8 @@
         <div class="source-grid"><article><span class="source-icon">☂</span><h3>Dự báo khí tượng</h3><p>Open-Meteo cung cấp lượng mưa dự báo theo giờ tại một điểm đại diện. Không phải dữ liệu đo trực tiếp tại từng đường phố.</p><span class="source-status">API · Tự cập nhật 15 phút</span></article><article><span class="source-icon">◎</span><h3>Bản đồ & kịch bản</h3><p>Bản đồ nền OpenStreetMap. Các lớp địa điểm, hạ tầng, độ sâu và vùng lan là dữ liệu nghiên cứu, cần xác minh tại thực địa.</p><span class="source-status">Tham chiếu · Chưa kiểm định</span></article><article><span class="source-icon">▤</span><h3>Báo cáo của bạn</h3><p>Ghi nhận do người dùng nhập, lưu cục bộ trên thiết bị. Không tự xác minh, không tự gán vị trí khi chưa chọn tọa độ.</p><span class="source-status">Cục bộ · Chưa xác minh</span></article></div>
         <div class="method-note"><b>Phạm vi nghiên cứu</b><p>Các điểm tham chiếu thuộc khu vực Hà Đông và lân cận; không phải lớp địa giới phường đã xác minh. Chưa tích hợp quan trắc mực nước, mạng cống đo đạc hoặc mô hình AI được kiểm định.</p></div>
       </section>
+
+      
 
       
 

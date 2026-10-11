@@ -9,6 +9,8 @@ test('HTML, modules and data are served correctly',async()=>{
   const response=await fetch(base+route);assert.equal(response.status,200,route);
  }
  const html=await(await fetch(base)).text();assert.match(html,/Bản đồ cảnh báo ngập Hà Đông/);
+ assert.match(html,/Theo dõi ngập úng Hà Đông/);
+ assert.match(html,/id="dashboard"/);
  assert.match(html,/report-dialog/);
  assert.match(html,/weather-now-card/);
  assert.equal((await fetch(base+'/api/health')).status,200);

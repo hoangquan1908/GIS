@@ -736,6 +736,12 @@ main {
 .section-block {
   margin-top:33px
 }
+.map-intro {
+  margin-bottom: 28px
+}
+.map-intro .page-heading {
+  margin-top: 0
+}
 .section-heading {
   display:flex;
   justify-content:space-between;

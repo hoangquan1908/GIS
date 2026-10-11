@@ -252,6 +252,11 @@ function initMap(data) {
   });
   document.querySelectorAll('[data-layer]').forEach(input=>{const layer=layers[input.dataset.layer];if(layer){if(input.checked)layer.addTo(map);else map.removeLayer(layer);}});
   renderLocations();renderReportMarkers();renderRainLayer();updateMapAlertHud();updateEarlyWarnings();
+  const fixSize = () => { try { map.invalidateSize(true); } catch {} };
+  requestAnimationFrame(fixSize);
+  setTimeout(fixSize, 150);
+  setTimeout(fixSize, 600);
+  window.addEventListener('resize', fixSize);
 }
 async function updateScenario() {
   const version=++scenarioVersion;
