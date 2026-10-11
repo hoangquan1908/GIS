@@ -50,6 +50,19 @@ export function saveReport(report, file = reportsPath) {
 }
 
 /**
+ * Convert flood depth (cm) to a human-readable label with real-world reference.
+ */
+export function getDepthLabel(depthCm) {
+  if (depthCm <= 0)  return { label: 'Đường khô ráo', icon: '✅', severity: 'safe' };
+  if (depthCm <= 8)  return { label: 'Ẩm ướt mặt đường (≤ 8 cm)', icon: '💧', severity: 'safe' };
+  if (depthCm <= 15) return { label: 'Ngập cổ chân (~10–15 cm)', icon: '🥾', severity: 'low' };
+  if (depthCm <= 25) return { label: 'Ngập nửa bánh xe máy (~20–25 cm)', icon: '🛵', severity: 'medium' };
+  if (depthCm <= 35) return { label: 'Ngập toàn bánh xe (~30–35 cm) – Xe máy cẩn thận!', icon: '⚠️', severity: 'high' };
+  if (depthCm <= 45) return { label: 'Ngập ngang hông xe máy (~40–45 cm) – Nguy cơ chết máy!', icon: '🚨', severity: 'very_high' };
+  return { label: 'Ngập sâu nguy hiểm (> 45 cm) – Không thể qua bằng xe máy!', icon: '🆘', severity: 'critical' };
+}
+
+/**
  * Predict flood depth, start time, and risk level based on horizon and rain.
  * Horizon: '+30m', '+1h', '+2h', '+3h'
  */
@@ -101,19 +114,25 @@ export function getAiForecast(horizon = '+1h', currentRainRate = 35) {
     const startMins = p.start_offset_min || 30;
     const startTime = new Date(now.getTime() + startMins * 60000);
     const startTimeStr = `${String(startTime.getHours()).padStart(2, '0')}:${String(startTime.getMinutes()).padStart(2, '0')}`;
+    const depthLabel = getDepthLabel(predictedDepth);
 
     return {
       id: p.id,
       name: p.name,
       street: p.street,
       ward: p.ward,
+      district: p.district || '',
       coordinates: feature.geometry.coordinates,
       risk_level: riskLevel,
       risk_label: riskLabel,
       depth_min_cm: minDepth,
       depth_max_cm: maxDepth,
       depth_range_text: `${minDepth}–${maxDepth} cm`,
+      depth_label: depthLabel.label,
+      depth_icon: depthLabel.icon,
+      depth_severity: depthLabel.severity,
       start_time: startTimeStr,
+      start_offset_min: startMins,
       confidence_pct: Math.min(95, Math.max(65, horizonMultiplier.conf + (p.elevation_m < 5.0 ? 3 : -2))),
       note: p.note,
       solution: p.solution
@@ -122,6 +141,20 @@ export function getAiForecast(horizon = '+1h', currentRainRate = 35) {
 
   // Hotspot with highest predicted depth
   const topHotspot = [...predictions].sort((a, b) => b.depth_max_cm - a.depth_max_cm)[0];
+  // Early warnings: sites with start_offset_min <= 45 and risk >= medium
+  const earlyWarnings = predictions
+    .filter(p => p.start_offset_min <= 45 && ['medium','high','very_high'].includes(p.risk_level))
+    .sort((a, b) => a.start_offset_min - b.start_offset_min)
+    .slice(0, 5)
+    .map(p => ({
+      name: p.name,
+      district: p.district,
+      start_time: p.start_time,
+      start_offset_min: p.start_offset_min,
+      depth_label: p.depth_label,
+      depth_icon: p.depth_icon,
+      risk_level: p.risk_level
+    }));
 
   return {
     horizon: hKey,
@@ -131,9 +164,12 @@ export function getAiForecast(horizon = '+1h', currentRainRate = 35) {
       name: topHotspot.name,
       risk_label: topHotspot.risk_label,
       depth_range_text: topHotspot.depth_range_text,
+      depth_label: topHotspot.depth_label,
+      depth_icon: topHotspot.depth_icon,
       start_time: topHotspot.start_time,
       confidence_pct: topHotspot.confidence_pct
     },
+    early_warnings: earlyWarnings,
     predictions
   };
 }

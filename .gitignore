@@ -9,3 +9,5 @@ data/observations*.csv
 
 # Local browser verification output
 /artifacts/
+
+.vercel

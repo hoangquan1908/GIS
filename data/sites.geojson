@@ -1,9 +1,9 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "title": "Điểm nguy cơ & điểm ngập lịch sử Hà Đông",
-    "updated_at": "2026-09-16T14:40:00+07:00",
-    "district": "Quận Hà Đông, TP. Hà Nội"
+    "title": "Điểm nguy cơ & điểm ngập lịch sử – Hà Đông, Thanh Xuân, Nam Từ Liêm, Hoàng Mai",
+    "updated_at": "2026-10-11T12:00:00+07:00",
+    "coverage": "Quận Hà Đông, Thanh Xuân, Nam Từ Liêm, Hoàng Mai – TP. Hà Nội"
   },
   "features": [
     {
@@ -14,11 +14,11 @@
         "name": "Hầm chui Nguyễn Trãi - Khuất Duy Tiến / Trần Phú",
         "street": "Đường Nguyễn Trãi - Trần Phú",
         "ward": "Thanh Xuân Bắc - Mộ Lao",
+        "district": "Hà Đông / Thanh Xuân",
         "elevation_m": 4.8,
         "historical_max_depth_cm": 65,
         "base_depth_cm": 35,
         "risk_level": "very_high",
-        "status": "flooding",
         "start_offset_min": 25,
         "note": "Điểm trũng cục bộ hầm chui, nước dồn từ các nhánh dốc vào hầm khi mưa >40mm/h.",
         "solution": "Cảnh báo cấm xe máy lưu thông vào hầm; vận hành trạm bơm tự động đáy hầm công suất tối đa."
@@ -32,14 +32,14 @@
         "name": "Khu đô thị Mộ Lao (Đường Nguyễn Văn Lộc)",
         "street": "Đường Nguyễn Văn Lộc",
         "ward": "Phường Mộ Lao",
+        "district": "Hà Đông",
         "elevation_m": 5.4,
         "historical_max_depth_cm": 40,
         "base_depth_cm": 25,
         "risk_level": "high",
-        "status": "flooding",
         "start_offset_min": 40,
         "note": "Đoạn gần ngã ba Trần Phú và cổng làng Mộ Lao thường ngập bánh xe máy trong các cơn mưa lớn.",
-        "solution": "Kiểm tra ga thu nước trên vỉa hè; hướng dẫn xe rẽ sang đường Thanh Bình ven sông Nhuệ nếu sông chưa dâng cao."
+        "solution": "Kiểm tra ga thu nước trên vỉa hè; hướng dẫn xe rẽ sang đường Thanh Bình ven sông Nhuệ."
       }
     },
     {
@@ -50,11 +50,11 @@
         "name": "KĐT Văn Quán (Đường Nguyễn Khuyến & Quanh Hồ)",
         "street": "Đường Nguyễn Khuyến",
         "ward": "Phường Văn Quán",
+        "district": "Hà Đông",
         "elevation_m": 5.1,
         "historical_max_depth_cm": 50,
         "base_depth_cm": 30,
         "risk_level": "high",
-        "status": "flooding",
         "start_offset_min": 35,
         "note": "Đường Nguyễn Khuyến đoạn qua Trường Ban Mai và ven Hồ Văn Quán thoát nước chậm khi hồ đầy.",
         "solution": "Mở van điều tiết Hồ Văn Quán ra mương tiêu; lập rào chắn hạn chế ô tô gầm thấp."
@@ -68,11 +68,11 @@
         "name": "Đường Quang Trung (Trước Ga La Khê & Bến xe cũ)",
         "street": "Đường Quang Trung",
         "ward": "Phường Quang Trung",
+        "district": "Hà Đông",
         "elevation_m": 5.8,
         "historical_max_depth_cm": 45,
         "base_depth_cm": 28,
         "risk_level": "high",
-        "status": "warning",
         "start_offset_min": 45,
         "note": "Trục huyết mạch QL6, lòng đường rộng nhưng trũng đoạn ngã tư Quang Trung - Lê Trọng Tấn.",
         "solution": "Lực lượng CSGT túc trực phân luồng xe đi sang đường vành đai phía Nam hoặc nhánh đê La Khê."
@@ -86,11 +86,11 @@
         "name": "Ngã ba Ba La (Giao QL6 & QL21B)",
         "street": "Quốc lộ 6 - Quốc lộ 21B",
         "ward": "Phường Phú La",
+        "district": "Hà Đông",
         "elevation_m": 5.0,
         "historical_max_depth_cm": 55,
         "base_depth_cm": 32,
         "risk_level": "very_high",
-        "status": "flooding",
         "start_offset_min": 30,
         "note": "Điểm trũng ngập sâu mỗi khi mưa trên 50mm, gây ùn tắc toàn bộ cửa ngõ Tây Nam thủ đô.",
         "solution": "Khơi thông cửa xả Ba La dẫn về trạm bơm Yên Nghĩa; đặt biển cảnh báo sớm từ xa tại Cầu Trắng."
@@ -104,11 +104,11 @@
         "name": "Đường Tố Hữu (Ngã tư Tố Hữu - Lương Thế Vinh / Mỗ Lao)",
         "street": "Đường Tố Hữu (Lê Văn Lương kéo dài)",
         "ward": "Phường Trung Văn - Vạn Phúc",
+        "district": "Nam Từ Liêm / Hà Đông",
         "elevation_m": 5.6,
         "historical_max_depth_cm": 45,
         "base_depth_cm": 20,
         "risk_level": "medium",
-        "status": "advisory",
         "start_offset_min": 50,
         "note": "Khu vực mật độ phương tiện đông, ngập 2 làn xe máy chiều vào trung tâm thành phố.",
         "solution": "Yêu cầu đơn vị thoát nước vớt rác tại các miệng hố ga dọc dải phân cách BRT."
@@ -122,11 +122,11 @@
         "name": "Đường Lê Trọng Tấn (Đoạn qua KĐT Geleximco & Cầu La Khê)",
         "street": "Đường Lê Trọng Tấn",
         "ward": "Phường Dương Nội",
+        "district": "Hà Đông",
         "elevation_m": 4.9,
         "historical_max_depth_cm": 60,
         "base_depth_cm": 38,
         "risk_level": "very_high",
-        "status": "flooding",
         "start_offset_min": 25,
         "note": "Cao độ nền trũng giữa 2 sườn đồi tự nhiên, nước bề mặt khu đô thị dồn mạnh ra mặt đường gom.",
         "solution": "Đóng tạm làn đường gom thấp trũng; cho phép phương tiện tạm thời đi làn chính trên cao."
@@ -140,11 +140,11 @@
         "name": "Đường Phùng Hưng (Đoạn cổng Bệnh viện 103 & Viện Bỏng)",
         "street": "Đường Phùng Hưng",
         "ward": "Phường Phúc La",
+        "district": "Hà Đông",
         "elevation_m": 5.2,
         "historical_max_depth_cm": 40,
         "base_depth_cm": 22,
         "risk_level": "medium",
-        "status": "advisory",
         "start_offset_min": 45,
         "note": "Khu vực tập trung bệnh viện lớn, ngập ảnh hưởng trực tiếp đến xe cứu thương và người khám chữa bệnh.",
         "solution": "Ưu tiên tổ chức máy bơm lưu động tại cửa thu nước cổng Viện 103."
@@ -158,11 +158,11 @@
         "name": "Phố Lụa Vạn Phúc - Đoạn Cầu Am",
         "street": "Đường Vạn Phúc",
         "ward": "Phường Vạn Phúc",
+        "district": "Hà Đông",
         "elevation_m": 5.7,
         "historical_max_depth_cm": 35,
         "base_depth_cm": 15,
         "risk_level": "low",
-        "status": "normal",
         "start_offset_min": 60,
         "note": "Gần ngã tư Cầu Am, khi mực nước sông Nhuệ dâng cao gây chảy ngược cống thoát.",
         "solution": "Đóng nắp van lật chống tràn ngược từ sông Nhuệ vào khu dân cư làng Vạn Phúc."
@@ -176,11 +176,11 @@
         "name": "KĐT Xa La (Cổng chào & Đoạn CT1 - CT2)",
         "street": "Đường trục KĐT Xa La",
         "ward": "Phường Phúc La",
+        "district": "Hà Đông",
         "elevation_m": 5.0,
         "historical_max_depth_cm": 48,
         "base_depth_cm": 28,
         "risk_level": "high",
-        "status": "warning",
         "start_offset_min": 35,
         "note": "Tuyến đường nối ra Cầu Bươu thường bị ngập cục bộ do trũng thấp gần cánh đồng cũ.",
         "solution": "Khơi thông rãnh dẫn nước ra sông Nhuệ; nhắc nhở cư dân chung cư không đỗ ô tô dưới hầm thấp."
@@ -194,11 +194,11 @@
         "name": "Đường Chiến Thắng (Đoạn Học viện An Ninh)",
         "street": "Đường Chiến Thắng",
         "ward": "Phường Văn Quán",
+        "district": "Hà Đông",
         "elevation_m": 5.3,
         "historical_max_depth_cm": 35,
         "base_depth_cm": 18,
         "risk_level": "medium",
-        "status": "advisory",
         "start_offset_min": 50,
         "note": "Ngõ hẹp, mật độ sinh viên đông, nước thoát ra hồ Văn Quán bị nghẽn bởi rác sinh hoạt.",
         "solution": "Tăng cường công nhân môi trường vớt rác tại các hố ga mặt đường Chiến Thắng."
@@ -212,11 +212,11 @@
         "name": "Đường Tô Hiệu (Trước Chi cục Thuế & Siêu thị MM Mega Market)",
         "street": "Đường Tô Hiệu",
         "ward": "Phường Hà Cầu",
+        "district": "Hà Đông",
         "elevation_m": 6.0,
         "historical_max_depth_cm": 30,
         "base_depth_cm": 12,
         "risk_level": "low",
-        "status": "normal",
         "start_offset_min": 65,
         "note": "Khu vực trung tâm hành chính quận Hà Đông, ngập nhẹ ven lề đường sau mưa rào lớn.",
         "solution": "Theo dõi hệ thống thoát nước tự chảy; không cần áp dụng biện pháp hạn chế phương tiện."
@@ -230,11 +230,11 @@
         "name": "KĐT Dương Nội (Khu An Vượng Villa - Công viên Thiên Văn Học)",
         "street": "Đường Ngô Thì Nhậm kéo dài",
         "ward": "Phường Dương Nội",
+        "district": "Hà Đông",
         "elevation_m": 5.9,
         "historical_max_depth_cm": 25,
         "base_depth_cm": 10,
         "risk_level": "low",
-        "status": "normal",
         "start_offset_min": 70,
         "note": "Khu vực có hồ điều hòa Bách Hợp Thủy 12ha, khả năng tự tiêu thoát nước khá tốt.",
         "solution": "Chủ động hạ mực nước hồ điều hòa công viên Thiên Văn Học đón trước đợt mưa lớn."
@@ -248,11 +248,11 @@
         "name": "KĐT Văn Phú (Đường Lê Trọng Tấn rẽ vào đường 24m)",
         "street": "Đường trục chính KĐT Văn Phú",
         "ward": "Phường Phú La",
+        "district": "Hà Đông",
         "elevation_m": 5.5,
         "historical_max_depth_cm": 38,
         "base_depth_cm": 20,
         "risk_level": "medium",
-        "status": "advisory",
         "start_offset_min": 50,
         "note": "Đoạn vòng xuyến trung tâm KĐT Văn Phú ngập nửa bánh xe khi mưa dồn trong 1 giờ.",
         "solution": "Kiểm tra hệ thống cống hộp trục D1500 xả về trạm bơm Cầu Đơ."
@@ -266,11 +266,11 @@
         "name": "Làng Đa Sỹ - Phố Kiến Hưng",
         "street": "Đường Đa Sỹ - Kiến Hưng",
         "ward": "Phường Kiến Hưng",
+        "district": "Hà Đông",
         "elevation_m": 5.1,
         "historical_max_depth_cm": 45,
         "base_depth_cm": 26,
         "risk_level": "high",
-        "status": "warning",
         "start_offset_min": 40,
         "note": "Đoạn ven mương tiêu Đa Sỹ, dân cư đông đúc ven đầm, cốt nền không đồng đều.",
         "solution": "Nạo vét bèo rác mương hở dẫn nước ra trạm bơm Đa Sỹ."
@@ -284,14 +284,230 @@
         "name": "Khu vực Trạm bơm Tiêu Yên Nghĩa (Chân cầu Mai Lĩnh)",
         "street": "Đường Yên Lộ - Đê Sông Đáy",
         "ward": "Phường Yên Nghĩa",
+        "district": "Hà Đông",
         "elevation_m": 6.2,
         "historical_max_depth_cm": 30,
         "base_depth_cm": 15,
         "risk_level": "low",
-        "status": "normal",
         "start_offset_min": 60,
         "note": "Đầu mối tiêu thoát chính của toàn lưu vực Tây Hà Nội ra Sông Đáy, công suất 120 m3/s.",
         "solution": "Duy trì hoạt động liên tục các tổ máy bơm theo mực nước kênh dẫn La Khê."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8058, 20.9948] },
+      "properties": {
+        "id": "nguyen-trai-thanh-xuan",
+        "name": "Đường Nguyễn Trãi (Đoạn Thanh Xuân Trung - Ngã tư Sở)",
+        "street": "Đường Nguyễn Trãi",
+        "ward": "Phường Thanh Xuân Trung",
+        "district": "Thanh Xuân",
+        "elevation_m": 5.2,
+        "historical_max_depth_cm": 50,
+        "base_depth_cm": 30,
+        "risk_level": "high",
+        "start_offset_min": 30,
+        "note": "Trục đường huyết mạch, đoạn gần siêu thị Big C Thăng Long thường xuyên ngập khi mưa lớn trên 35 mm/h.",
+        "solution": "Phân luồng xe từ cầu vượt Nguyễn Trãi; bố trí lực lượng cứu hộ tại vị trí trũng thấp."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8115, 20.9878] },
+      "properties": {
+        "id": "kim-giang-tran-phu",
+        "name": "Ngã tư Kim Giang - Đường Trần Phú",
+        "street": "Đường Kim Giang",
+        "ward": "Phường Kim Giang",
+        "district": "Thanh Xuân",
+        "elevation_m": 5.0,
+        "historical_max_depth_cm": 55,
+        "base_depth_cm": 32,
+        "risk_level": "very_high",
+        "start_offset_min": 28,
+        "note": "Khu vực trũng sát kênh Kim Giang, lòng cống thoát nước cũ kỹ bị tắc nghẽn thường xuyên.",
+        "solution": "Nạo vét cống hộp kênh Kim Giang; lắp đặt van 1 chiều ngăn nước kênh chảy ngược."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8142, 20.9920] },
+      "properties": {
+        "id": "nhan-chinh-lang-ha",
+        "name": "Đường Lê Văn Lương (Đoạn Nhân Chính - Trung Kính)",
+        "street": "Đường Lê Văn Lương",
+        "ward": "Phường Nhân Chính",
+        "district": "Thanh Xuân",
+        "elevation_m": 5.5,
+        "historical_max_depth_cm": 40,
+        "base_depth_cm": 22,
+        "risk_level": "medium",
+        "start_offset_min": 40,
+        "note": "Tuyến đường mới nhưng vẫn ngập cục bộ do hệ thống thoát nước không đồng bộ với các khu dân cư hai bên.",
+        "solution": "Kiểm tra và kết nối đồng bộ các cống thoát nước nội khu vào hệ thống thoát nước chính."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7738, 21.0052] },
+      "properties": {
+        "id": "my-dinh-pham-hung",
+        "name": "Đường Phạm Hùng (Đoạn Mỹ Đình - Cầu Diễn)",
+        "street": "Đường Phạm Hùng",
+        "ward": "Phường Mỹ Đình 1",
+        "district": "Nam Từ Liêm",
+        "elevation_m": 5.8,
+        "historical_max_depth_cm": 35,
+        "base_depth_cm": 18,
+        "risk_level": "medium",
+        "start_offset_min": 45,
+        "note": "Đoạn trước SVĐ Mỹ Đình hay ngập do lún nền và hệ thống cống không đáp ứng được lưu lượng xả lớn.",
+        "solution": "Nâng cấp hệ thống cống D800 trục Phạm Hùng; lắp camera giám sát mực nước tại điểm trũng."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7640, 21.0128] },
+      "properties": {
+        "id": "cau-dien-hoai-duc",
+        "name": "Khu vực Cầu Diễn - Đường 32 (Hòe Thị)",
+        "street": "Đường 32 (Hồ Tùng Mậu)",
+        "ward": "Phường Cầu Diễn",
+        "district": "Nam Từ Liêm",
+        "elevation_m": 5.2,
+        "historical_max_depth_cm": 42,
+        "base_depth_cm": 24,
+        "risk_level": "high",
+        "start_offset_min": 38,
+        "note": "Điểm trũng lịch sử, khu vực ven đê sông Nhuệ, hay bị ngập do nước lũ từ Hoài Đức dồn về.",
+        "solution": "Gia cố mặt đê sông Nhuệ đoạn qua Cầu Diễn; bố trí trạm bơm lưu động dã chiến khi có lũ lớn."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8398, 20.9812] },
+      "properties": {
+        "id": "hoang-mai-linh-dam",
+        "name": "Khu đô thị Linh Đàm (Bán đảo & Vành đai 2,5)",
+        "street": "Đường Nguyễn Hữu Thọ",
+        "ward": "Phường Hoàng Liệt",
+        "district": "Hoàng Mai",
+        "elevation_m": 4.7,
+        "historical_max_depth_cm": 58,
+        "base_depth_cm": 35,
+        "risk_level": "very_high",
+        "start_offset_min": 22,
+        "note": "Bán đảo Linh Đàm được bao quanh bởi hồ, khi mưa lớn kết hợp triều cường rất dễ bị cô lập.",
+        "solution": "Kích hoạt máy bơm dã chiến công suất lớn; thông báo sơ tán xe địa tầng hầm trước mưa."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8315, 20.9745] },
+      "properties": {
+        "id": "giap-bat-tam-hiep",
+        "name": "Khu vực Giáp Bát - Tam Hiệp (Đường Giải Phóng)",
+        "street": "Đường Giải Phóng",
+        "ward": "Phường Giáp Bát",
+        "district": "Hoàng Mai",
+        "elevation_m": 5.3,
+        "historical_max_depth_cm": 48,
+        "base_depth_cm": 28,
+        "risk_level": "high",
+        "start_offset_min": 32,
+        "note": "Trục đường huyết mạch vào Hà Nội từ phía Nam, hay bị ngập đoạn trước Ga Giáp Bát.",
+        "solution": "Phân luồng xe từ đường vành đai 3; đặt trạm bơm lưu động tại điểm thấp nhất trước cổng ga."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.8162, 20.9658] },
+      "properties": {
+        "id": "yen-so-thanh-tri",
+        "name": "Khu vực Yên Sở - Cầu Dậu (Đường Pháp Vân)",
+        "street": "Đường Pháp Vân - Cầu Dậu",
+        "ward": "Phường Yên Sở",
+        "district": "Hoàng Mai",
+        "elevation_m": 4.6,
+        "historical_max_depth_cm": 62,
+        "base_depth_cm": 38,
+        "risk_level": "very_high",
+        "start_offset_min": 20,
+        "note": "Vùng trũng thấp nhất phía Đông Nam nội thành, nguy cơ ngập diện rộng khi mực nước hồ Yên Sở dâng cao.",
+        "solution": "Trạm bơm Yên Sở phải vận hành 24/7 trong mùa mưa; lắp hệ thống cảnh báo sớm IoT mực nước."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7850, 20.9708] },
+      "properties": {
+        "id": "tran-phu-ha-dong-center",
+        "name": "Đường Trần Phú (Trung tâm Hà Đông - Cầu Trắng)",
+        "street": "Đường Trần Phú",
+        "ward": "Phường Hà Cầu",
+        "district": "Hà Đông",
+        "elevation_m": 5.9,
+        "historical_max_depth_cm": 32,
+        "base_depth_cm": 16,
+        "risk_level": "low",
+        "start_offset_min": 55,
+        "note": "Trục chính trung tâm quận, hệ thống thoát nước được nâng cấp năm 2022, ngập nhẹ tại ngã tư với Quang Trung.",
+        "solution": "Bảo dưỡng định kỳ cống D1000 trục Trần Phú; lắp lưới chắn rác tại các miệng thu nước."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7980, 20.9712] },
+      "properties": {
+        "id": "phung-hung-cau-buu",
+        "name": "Đường Phùng Hưng - Cầu Bươu (Khu vực Kiến Hưng mở rộng)",
+        "street": "Đường Phùng Hưng kéo dài",
+        "ward": "Phường Kiến Hưng",
+        "district": "Hà Đông",
+        "elevation_m": 4.9,
+        "historical_max_depth_cm": 52,
+        "base_depth_cm": 30,
+        "risk_level": "high",
+        "start_offset_min": 33,
+        "note": "Đoạn cầu Bươu vẫn còn trũng thấp, nước từ thượng lưu sông Nhuệ đổ về nhanh khi mưa lớn.",
+        "solution": "Gia cố bờ kè sông Nhuệ đoạn Cầu Bươu; cấm xe tải trọng lớn qua cầu khi mưa lớn."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7620, 20.9710] },
+      "properties": {
+        "id": "la-khe-hong-ha",
+        "name": "Kênh La Khê - Đường Hồng Hà (Hà Đông)",
+        "street": "Đường Hồng Hà",
+        "ward": "Phường La Khê",
+        "district": "Hà Đông",
+        "elevation_m": 5.4,
+        "historical_max_depth_cm": 38,
+        "base_depth_cm": 20,
+        "risk_level": "medium",
+        "start_offset_min": 42,
+        "note": "Đoạn đường ven kênh La Khê dễ ngập khi kênh dẫn bị tắc nghẽn do bèo và rác thải mùa mưa.",
+        "solution": "Vớt bèo kênh La Khê định kỳ; xây tường chắn lũ tạm tại các điểm thấp ven đường."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.7460, 20.9850] },
+      "properties": {
+        "id": "an-khanh-hoai-duc",
+        "name": "Khu An Khánh - Đường Thiên Đường Bảo Sơn",
+        "street": "Đường An Khánh - Thiên Đường Bảo Sơn",
+        "ward": "Xã An Khánh",
+        "district": "Hoài Đức",
+        "elevation_m": 6.1,
+        "historical_max_depth_cm": 28,
+        "base_depth_cm": 13,
+        "risk_level": "low",
+        "start_offset_min": 68,
+        "note": "Khu vực ven đê, hay ngập cục bộ tại các đoạn đường thấp khi có lũ sông Đáy.",
+        "solution": "Theo dõi mực nước sông Đáy; sẵn sàng sơ tán khi mực nước đạt báo động 2."
       }
     }
   ]

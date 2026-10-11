@@ -26,9 +26,11 @@
     <p class="nav-caption">KHÔNG GIAN LÀM VIỆC</p>
     <nav>
       <a href="#dashboard" class="active" aria-current="location"><span class="nav-icon">▦</span>Tổng quan <span class="nav-arrow">↗</span></a>
+      <a href="#early-warning-section"><span class="nav-icon">🔔</span>Cảnh báo sớm</a>
       <a href="#gis-map-section"><span class="nav-icon">◎</span>Bản đồ khu vực</a>
       <a href="#rain-monitoring-section"><span class="nav-icon">☂</span>Dự báo mưa & AI 24h</a>
-      <a href="#scenario-section"><span class="nav-icon">◴</span>Kịch bản & AI Tuyến đường</a>
+      <a href="#route-finder-section"><span class="nav-icon">🗺️</span>Tìm tuyến tránh ngập</a>
+      <a href="#scenario-section"><span class="nav-icon">◴</span>Kịch bản & Mô phỏng</a>
       <a href="#solutions-section"><span class="nav-icon">🛟</span>Giải pháp ứng phó</a>
       <a href="#community-section"><span class="nav-icon">♧</span>Báo cáo cộng đồng</a>
       <a href="#sources-section"><span class="nav-icon">▤</span>Dữ liệu & phương pháp</a>
@@ -53,6 +55,28 @@
           <article class="kpi-card"><div class="kpi-top"><span>Báo cáo của bạn</span><span class="metric-icon purple">▤</span></div><strong id="kpi-reports">—</strong><p>Lưu trên trình duyệt này <a href="#community-section" aria-label="Xem báo cáo">↗</a></p></article>
         </div>
         <div class="notice"><span class="notice-icon">i</span><p><b>Phân biệt dự báo và mô phỏng.</b> Mưa là dự báo khí tượng; độ sâu, vùng lan và tuyến đường là kịch bản minh họa, chưa được kiểm định để cảnh báo thực tế.</p><a href="#sources-section">Chi tiết ↗</a></div>
+      </section>
+
+      <!-- EARLY WARNING SECTION -->
+      <section id="early-warning-section" class="section-block card early-warning-card" aria-labelledby="ew-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">00 / CẢNH BÁO SỚM</p><h2 id="ew-title">⚠️ Cảnh báo ngập theo thời gian thực</h2></div>
+          <span id="ew-level-badge" class="ew-badge level-normal">🟢 BÌNH THƯỜNG</span>
+        </div>
+        <p id="ew-banner" class="ew-banner-text">Đang tính toán kịch bản từ dữ liệu mưa…</p>
+        <div class="ew-depth-legend">
+          <span class="depth-chip safe">✅ Khô ráo</span>
+          <span class="depth-chip low">🥾 Cổ chân</span>
+          <span class="depth-chip medium">🛵 Nửa bánh xe</span>
+          <span class="depth-chip high">⚠️ Toàn bánh xe</span>
+          <span class="depth-chip very_high">🚨 Ngang hông</span>
+          <span class="depth-chip critical">🆘 Ngập sâu</span>
+        </div>
+        <div id="ew-warnings-list" class="ew-warnings-list"></div>
+        <div class="ew-actions">
+          <a href="#route-finder-section" class="button primary small">🗺️ Tìm tuyến tránh ngập</a>
+          <a href="#gis-map-section" class="button secondary small">◎ Xem bản đồ</a>
+        </div>
       </section>
       <section id="gis-map-section" class="section-block" aria-labelledby="map-title">
         <div class="section-heading"><div><p class="eyebrow">01 / KHÁM PHÁ KHÔNG GIAN</p><h2 id="map-title">Bản đồ khu vực <span class="count-badge" id="map-count">—</span></h2></div><div class="button-row"><button id="share-view" class="button secondary small">↗ Chia sẻ bộ lọc</button><button id="locate-btn" class="button secondary small">⌖ Vị trí của tôi</button><button id="reset-map-btn" class="button secondary small">◎ Về trung tâm</button></div></div>
@@ -167,14 +191,51 @@
         </div>
         </div></details>
       </section>
+
+      <!-- ROUTE FINDER SECTION -->
+      <section id="route-finder-section" class="section-block card" aria-labelledby="rf-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">03.5 / TÌM ĐƯỜNG TRÁNH NGẬP</p><h2 id="rf-title">🗺️ Tìm tuyến đường an toàn</h2></div>
+          <span class="badge light"><i class="hud-dot"></i> AI ĐIỀU HƯỚNG</span>
+        </div>
+        <p class="muted">Nhập điểm xuất phát và điểm đến — hệ thống sẽ kiểm tra xem lộ trình có đi qua khu vực ngập không và đề xuất tuyến an toàn.</p>
+        <div class="route-finder-inputs">
+          <div class="rf-input-group">
+            <label class="field-label" for="rf-from">📍 Điểm xuất phát</label>
+            <input id="rf-from" type="text" class="rf-input" placeholder="VD: Nguyễn Trãi, Mộ Lao, Ba La…" autocomplete="off" list="rf-from-list">
+            <datalist id="rf-from-list"></datalist>
+          </div>
+          <div class="rf-arrow">→</div>
+          <div class="rf-input-group">
+            <label class="field-label" for="rf-to">🏁 Điểm đến</label>
+            <input id="rf-to" type="text" class="rf-input" placeholder="VD: Văn Phú, Xa La, Hà Đông…" autocomplete="off" list="rf-to-list">
+            <datalist id="rf-to-list"></datalist>
+          </div>
+          <button id="rf-search-btn" class="button primary rf-search-btn">🔍 Tìm đường</button>
+        </div>
+        <div class="rf-quick-routes">
+          <span class="small-text muted">Tuyến gợi ý nhanh:</span>
+          <button class="rf-quick-btn" data-from="Bệnh viện 103" data-to="KĐT Văn Phú">BV 103 → Văn Phú</button>
+          <button class="rf-quick-btn" data-from="Ngã tư Sở" data-to="Yên Nghĩa">Ngã tư Sở → Yên Nghĩa</button>
+          <button class="rf-quick-btn" data-from="KĐT Dương Nội" data-to="Cầu Trắng">Dương Nội → Cầu Trắng</button>
+          <button class="rf-quick-btn" data-from="KĐT Mộ Lao" data-to="Ba La">Mộ Lao → Ba La</button>
+        </div>
+        <div id="rf-result" class="rf-result" hidden></div>
+        <div id="rf-map-actions" class="button-row" hidden>
+          <button id="rf-show-map" class="button primary small">↗ Hiện tuyến trên bản đồ</button>
+          <button id="rf-clear-map" class="button secondary small">✕ Xóa tuyến</button>
+        </div>
+      </section>
       <section id="solutions-section" class="section-block card" aria-labelledby="solutions-title">
         <div class="section-heading"><div><p class="eyebrow">04 / GIẢI PHÁP ỨNG PHÓ</p><h2 id="solutions-title">Giải pháp thích ứng & Giảm thiểu ngập úng</h2></div><span class="badge light"><i class="status-dot"></i> 4 NHÓM HÀNH ĐỘNG</span></div>
         <p class="muted">Hệ thống giải pháp đồng bộ kết hợp cảnh báo giao thông, vận hành tiêu thoát nước, lực lượng cứu hộ và quy hoạch hạ tầng đô thị bền vững.</p>
         <div id="solutions-grid" class="solutions-grid"></div>
       </section>
       <section id="community-section" class="section-block card" aria-labelledby="community-title">
-        <div class="section-heading"><div><p class="eyebrow">05 / GHI NHẬN TỪ THỰC TẾ</p><h2 id="community-title">Nhật ký báo ngập của bạn</h2></div><button id="open-report" class="button primary">＋ Tạo báo cáo</button></div>
-        <p class="muted">Lưu trên trình duyệt này, chưa gửi tới cộng đồng hoặc cơ quan chức năng. Báo cáo mới luôn ở trạng thái chưa xác minh.</p>
+        <div class="section-heading"><div><p class="eyebrow">05 / GHI NHẬN TỪ THỰC TẾ</p><h2 id="community-title">Báo cáo ngập từ cộng đồng</h2></div>
+          <button id="open-report" class="button primary report-fab-btn">＋ Báo ngập ngay</button>
+        </div>
+        <p class="muted">Ghi nhận điểm ngập thực tế và chia sẻ với cộng đồng. Báo cáo lưu trên trình duyệt này, chưa gửi tới cơ quan chức năng.</p>
         <div class="community-toolbar"><label class="search-field"><span>⌕</span><input id="report-search" type="search" placeholder="Tìm báo cáo đã lưu…" aria-label="Tìm báo cáo"></label><div class="button-row"><button id="sample-reports-btn" class="text-button">★ Nạp dữ liệu mẫu</button><button id="import-reports" class="text-button">↑ Nhập bản sao lưu</button><input id="import-reports-file" type="file" accept=".json,application/json" aria-label="Chọn bản sao lưu JSON" hidden><button id="export-reports" class="text-button" disabled>↓ Xuất báo cáo JSON</button></div></div>
         <div id="community-feed" class="community-feed"></div>
       </section>
@@ -187,14 +248,47 @@
     </div>
   </main>
   <dialog id="report-dialog" aria-labelledby="report-title">
-    <form id="report-form"><div class="dialog-heading"><div><p class="eyebrow">NHẬT KÝ CỦA BẠN</p><h2 id="report-title">Ghi nhận tình trạng ngập</h2></div><button type="button" id="close-report" class="icon-button" aria-label="Đóng báo cáo">×</button></div><p class="muted small-text">Báo cáo được lưu trên trình duyệt, ở trạng thái chưa xác minh.</p><p id="draft-status" class="draft-status" role="status"></p>
+    <form id="report-form"><div class="dialog-heading"><div><p class="eyebrow">BÁO NGẬP NHANH</p><h2 id="report-title">Ghi nhận điểm ngập</h2></div><button type="button" id="close-report" class="icon-button" aria-label="Đóng báo cáo">×</button></div><p class="muted small-text">Báo cáo lưu trên trình duyệt, ở trạng thái chưa xác minh.</p><p id="draft-status" class="draft-status" role="status"></p>
       <label class="field-label" for="rep-name">Tên người ghi nhận</label><input id="rep-name" name="reporter" maxlength="80" required placeholder="Nhập tên của bạn" autocomplete="name">
       <label class="field-label" for="rep-location">Địa điểm / tuyến đường</label><input id="rep-location" maxlength="160" required placeholder="Tên đường, số nhà hoặc mốc gần nhất">
       <div class="coordinate-row"><span id="rep-coords" class="small-text muted">Chưa chọn tọa độ (không bắt buộc).</span><button type="button" id="pick-location" class="text-button">⌖ Chọn trên bản đồ</button></div>
-      <label class="field-label" for="rep-depth">Độ sâu ước tính</label><select id="rep-depth"><option value="low">Dưới 15 cm</option><option value="medium" selected>15–30 cm</option><option value="high">30–45 cm</option><option value="very_high">Trên 45 cm</option></select>
+      <label class="field-label">Mức độ ngập (chọn mức phù hợp)</label>
+      <div class="depth-visual-selector" id="depth-visual-selector">
+        <label class="depth-opt" data-value="very_low">
+          <input type="radio" name="rep-depth-radio" value="very_low">
+          <span class="depth-opt-icon">💧</span>
+          <span class="depth-opt-label">Ẩm ướt<br><small>≤ 8 cm</small></span>
+        </label>
+        <label class="depth-opt" data-value="low">
+          <input type="radio" name="rep-depth-radio" value="low">
+          <span class="depth-opt-icon">🥾</span>
+          <span class="depth-opt-label">Cổ chân<br><small>10–15 cm</small></span>
+        </label>
+        <label class="depth-opt" data-value="medium" class="default-depth">
+          <input type="radio" name="rep-depth-radio" value="medium" checked>
+          <span class="depth-opt-icon">🛵</span>
+          <span class="depth-opt-label">Nửa bánh xe<br><small>20–25 cm</small></span>
+        </label>
+        <label class="depth-opt" data-value="high">
+          <input type="radio" name="rep-depth-radio" value="high">
+          <span class="depth-opt-icon">⚠️</span>
+          <span class="depth-opt-label">Toàn bánh xe<br><small>30–35 cm</small></span>
+        </label>
+        <label class="depth-opt" data-value="very_high">
+          <input type="radio" name="rep-depth-radio" value="very_high">
+          <span class="depth-opt-icon">🚨</span>
+          <span class="depth-opt-label">Ngang hông<br><small>40–45 cm</small></span>
+        </label>
+        <label class="depth-opt" data-value="critical">
+          <input type="radio" name="rep-depth-radio" value="critical">
+          <span class="depth-opt-icon">🆘</span>
+          <span class="depth-opt-label">Ngập sâu<br><small>&gt; 45 cm</small></span>
+        </label>
+      </div>
+      <input type="hidden" id="rep-depth" value="medium">
       <label class="field-label" for="rep-description">Mô tả tình hình</label><textarea id="rep-description" rows="3" maxlength="1500" placeholder="Thời điểm quan sát, dấu mốc, tình trạng mặt đường…"></textarea>
       <label class="field-label" for="rep-photo">Ảnh hiện trường <span class="muted">(tùy chọn, tối đa 1 MB)</span></label><input type="file" id="rep-photo" accept="image/jpeg,image/png,image/webp"><img id="photo-preview" class="photo-preview" alt="Ảnh hiện trường bạn đã chọn" hidden>
-      <p id="report-error" class="form-error" role="alert"></p><div class="dialog-actions"><button type="button" id="clear-draft" class="text-button">Xóa nháp</button><button type="button" id="cancel-report" class="button secondary">Hủy</button><button type="submit" id="submit-report" class="button primary">Lưu báo cáo</button></div>
+      <p id="report-error" class="form-error" role="alert"></p><div class="dialog-actions"><button type="button" id="clear-draft" class="text-button">Xóa nháp</button><button type="button" id="cancel-report" class="button secondary">Hủy</button><button type="submit" id="submit-report" class="button primary">💾 Lưu báo cáo</button></div>
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" hidden></div>

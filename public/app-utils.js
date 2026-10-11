@@ -26,7 +26,7 @@ export function validateReport(report) {
   const reporter_name = text('reporter_name',80,true), location_name = text('location_name',160,true), description = text('description',1500);
   const coordinates = report.coordinates ?? null;
   if (coordinates !== null && (!Array.isArray(coordinates) || coordinates.length !== 2 || !coordinates.every(Number.isFinite) || Math.abs(coordinates[0]) > 180 || Math.abs(coordinates[1]) > 90)) throw new Error('Tọa độ không hợp lệ.');
-  if (!['low','medium','high','very_high'].includes(report.depth_level)) throw new Error('Chọn mức độ ngập.');
+  if (!['very_low','low','medium','high','very_high','critical'].includes(report.depth_level)) throw new Error('Chọn mức độ ngập.');
   if (typeof report.depth_cm !== 'number' || !Number.isFinite(report.depth_cm) || report.depth_cm < 0 || report.depth_cm > 500) throw new Error('Độ sâu không hợp lệ.');
   if (report.photo_url && !safePhoto(report.photo_url)) throw new Error('Ảnh phải là PNG, JPEG hoặc WebP và không quá 1 MB.');
   return {reporter_name,location_name,description,coordinates,depth_level:report.depth_level,depth_cm:report.depth_cm,photo_url:safePhoto(report.photo_url)};
