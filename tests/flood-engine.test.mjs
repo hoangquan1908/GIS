@@ -173,13 +173,12 @@ test('getAiRain24hAnalysis assesses upcoming 24h precipitation and traffic impac
   assert.equal(nullRes.will_rain, false);
 });
 
-test('getActionableSolutions provides 4 comprehensive categories', () => {
+test('getActionableSolutions provides 3 audience categories', () => {
   const solutions = getActionableSolutions(40);
-  assert.equal(solutions.length, 4);
-  assert.ok(solutions.some(s => s.category.includes('Cảnh báo nhân dân')));
-  assert.ok(solutions.some(s => s.category.includes('Vận hành hạ tầng')));
-  assert.ok(solutions.some(s => s.category.includes('Điều phối giao thông')));
-  assert.ok(solutions.some(s => s.category.includes('Giải pháp công trình')));
+  assert.equal(solutions.length, 3);
+  assert.ok(solutions.some(s => s.category.includes('cơ quan chức năng')));
+  assert.ok(solutions.some(s => s.category.includes('người dân')));
+  assert.ok(solutions.some(s => s.category.includes('tiêu thoát nước')));
   assert.ok(solutions.every(s => s.actions && s.actions.length >= 3));
 });
 

@@ -1,14 +1,20 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "title": "Điểm nguy cơ & điểm ngập lịch sử – Hà Đông, Thanh Xuân, Nam Từ Liêm, Hoàng Mai",
-    "updated_at": "2026-10-11T12:00:00+07:00",
+    "title": "Điểm nguy cơ ngập Hà Đông và lân cận",
+    "updated_at": "2026-10-11T20:10:00+07:00",
     "coverage": "Quận Hà Đông, Thanh Xuân, Nam Từ Liêm, Hoàng Mai – TP. Hà Nội"
   },
   "features": [
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7876, 20.9856] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7876,
+          20.9856
+        ]
+      },
       "properties": {
         "id": "ham-chui-nguyen-trai",
         "name": "Hầm chui Nguyễn Trãi - Khuất Duy Tiến / Trần Phú",
@@ -26,7 +32,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7892, 20.9842] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7892,
+          20.9842
+        ]
+      },
       "properties": {
         "id": "mo-lao",
         "name": "Khu đô thị Mộ Lao (Đường Nguyễn Văn Lộc)",
@@ -44,7 +56,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7924, 20.9758] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7924,
+          20.9758
+        ]
+      },
       "properties": {
         "id": "van-quan-nguyen-khuyen",
         "name": "KĐT Văn Quán (Đường Nguyễn Khuyến & Quanh Hồ)",
@@ -62,7 +80,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7708, 20.9678] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7708,
+          20.9678
+        ]
+      },
       "properties": {
         "id": "quang-trung",
         "name": "Đường Quang Trung (Trước Ga La Khê & Bến xe cũ)",
@@ -80,14 +104,20 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7582, 20.9575] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7582,
+          20.9575
+        ]
+      },
       "properties": {
         "id": "nga-ba-ba-la",
         "name": "Ngã ba Ba La (Giao QL6 & QL21B)",
         "street": "Quốc lộ 6 - Quốc lộ 21B",
         "ward": "Phường Phú La",
         "district": "Hà Đông",
-        "elevation_m": 5.0,
+        "elevation_m": 5,
         "historical_max_depth_cm": 55,
         "base_depth_cm": 32,
         "risk_level": "very_high",
@@ -98,7 +128,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7735, 20.9815] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7735,
+          20.9815
+        ]
+      },
       "properties": {
         "id": "to-huu-mo-lao",
         "name": "Đường Tố Hữu (Ngã tư Tố Hữu - Lương Thế Vinh / Mỗ Lao)",
@@ -116,7 +152,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7489, 20.9782] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7489,
+          20.9782
+        ]
+      },
       "properties": {
         "id": "le-trong-tan-geleximco",
         "name": "Đường Lê Trọng Tấn (Đoạn qua KĐT Geleximco & Cầu La Khê)",
@@ -134,7 +176,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7905, 20.9635] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7905,
+          20.9635
+        ]
+      },
       "properties": {
         "id": "phuc-la-vien-103",
         "name": "Đường Phùng Hưng (Đoạn cổng Bệnh viện 103 & Viện Bỏng)",
@@ -152,7 +200,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7765, 20.9762] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7765,
+          20.9762
+        ]
+      },
       "properties": {
         "id": "van-phuc-cau-am",
         "name": "Phố Lụa Vạn Phúc - Đoạn Cầu Am",
@@ -170,14 +224,20 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7968, 20.9582] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7968,
+          20.9582
+        ]
+      },
       "properties": {
         "id": "kdt-xa-la",
         "name": "KĐT Xa La (Cổng chào & Đoạn CT1 - CT2)",
         "street": "Đường trục KĐT Xa La",
         "ward": "Phường Phúc La",
         "district": "Hà Đông",
-        "elevation_m": 5.0,
+        "elevation_m": 5,
         "historical_max_depth_cm": 48,
         "base_depth_cm": 28,
         "risk_level": "high",
@@ -188,7 +248,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7942, 20.9825] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7942,
+          20.9825
+        ]
+      },
       "properties": {
         "id": "duong-chien-thang",
         "name": "Đường Chiến Thắng (Đoạn Học viện An Ninh)",
@@ -206,14 +272,20 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7742, 20.9632] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7742,
+          20.9632
+        ]
+      },
       "properties": {
         "id": "to-hieu-metro",
         "name": "Đường Tô Hiệu (Trước Chi cục Thuế & Siêu thị MM Mega Market)",
         "street": "Đường Tô Hiệu",
         "ward": "Phường Hà Cầu",
         "district": "Hà Đông",
-        "elevation_m": 6.0,
+        "elevation_m": 6,
         "historical_max_depth_cm": 30,
         "base_depth_cm": 12,
         "risk_level": "low",
@@ -224,7 +296,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7535, 20.9655] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7535,
+          20.9655
+        ]
+      },
       "properties": {
         "id": "kdt-duong-noi-nam-cuong",
         "name": "KĐT Dương Nội (Khu An Vượng Villa - Công viên Thiên Văn Học)",
@@ -242,7 +320,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7665, 20.9548] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7665,
+          20.9548
+        ]
+      },
       "properties": {
         "id": "kdt-van-phu",
         "name": "KĐT Văn Phú (Đường Lê Trọng Tấn rẽ vào đường 24m)",
@@ -260,7 +344,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7825, 20.9535] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7825,
+          20.9535
+        ]
+      },
       "properties": {
         "id": "da-sy-kien-hung",
         "name": "Làng Đa Sỹ - Phố Kiến Hưng",
@@ -278,7 +368,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7365, 20.9612] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7365,
+          20.9612
+        ]
+      },
       "properties": {
         "id": "yen-nghia-tram-bom",
         "name": "Khu vực Trạm bơm Tiêu Yên Nghĩa (Chân cầu Mai Lĩnh)",
@@ -296,7 +392,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8058, 20.9948] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8058,
+          20.9948
+        ]
+      },
       "properties": {
         "id": "nguyen-trai-thanh-xuan",
         "name": "Đường Nguyễn Trãi (Đoạn Thanh Xuân Trung - Ngã tư Sở)",
@@ -314,14 +416,20 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8115, 20.9878] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8115,
+          20.9878
+        ]
+      },
       "properties": {
         "id": "kim-giang-tran-phu",
         "name": "Ngã tư Kim Giang - Đường Trần Phú",
         "street": "Đường Kim Giang",
         "ward": "Phường Kim Giang",
         "district": "Thanh Xuân",
-        "elevation_m": 5.0,
+        "elevation_m": 5,
         "historical_max_depth_cm": 55,
         "base_depth_cm": 32,
         "risk_level": "very_high",
@@ -332,7 +440,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8142, 20.9920] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8142,
+          20.992
+        ]
+      },
       "properties": {
         "id": "nhan-chinh-lang-ha",
         "name": "Đường Lê Văn Lương (Đoạn Nhân Chính - Trung Kính)",
@@ -350,7 +464,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7738, 21.0052] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7738,
+          21.0052
+        ]
+      },
       "properties": {
         "id": "my-dinh-pham-hung",
         "name": "Đường Phạm Hùng (Đoạn Mỹ Đình - Cầu Diễn)",
@@ -368,7 +488,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7640, 21.0128] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.764,
+          21.0128
+        ]
+      },
       "properties": {
         "id": "cau-dien-hoai-duc",
         "name": "Khu vực Cầu Diễn - Đường 32 (Hòe Thị)",
@@ -386,7 +512,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8398, 20.9812] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8398,
+          20.9812
+        ]
+      },
       "properties": {
         "id": "hoang-mai-linh-dam",
         "name": "Khu đô thị Linh Đàm (Bán đảo & Vành đai 2,5)",
@@ -404,7 +536,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8315, 20.9745] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8315,
+          20.9745
+        ]
+      },
       "properties": {
         "id": "giap-bat-tam-hiep",
         "name": "Khu vực Giáp Bát - Tam Hiệp (Đường Giải Phóng)",
@@ -422,7 +560,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.8162, 20.9658] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8162,
+          20.9658
+        ]
+      },
       "properties": {
         "id": "yen-so-thanh-tri",
         "name": "Khu vực Yên Sở - Cầu Dậu (Đường Pháp Vân)",
@@ -440,7 +584,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7850, 20.9708] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.785,
+          20.9708
+        ]
+      },
       "properties": {
         "id": "tran-phu-ha-dong-center",
         "name": "Đường Trần Phú (Trung tâm Hà Đông - Cầu Trắng)",
@@ -458,7 +608,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7980, 20.9712] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.798,
+          20.9712
+        ]
+      },
       "properties": {
         "id": "phung-hung-cau-buu",
         "name": "Đường Phùng Hưng - Cầu Bươu (Khu vực Kiến Hưng mở rộng)",
@@ -476,7 +632,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7620, 20.9710] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.762,
+          20.971
+        ]
+      },
       "properties": {
         "id": "la-khe-hong-ha",
         "name": "Kênh La Khê - Đường Hồng Hà (Hà Đông)",
@@ -494,7 +656,13 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [105.7460, 20.9850] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.746,
+          20.985
+        ]
+      },
       "properties": {
         "id": "an-khanh-hoai-duc",
         "name": "Khu An Khánh - Đường Thiên Đường Bảo Sơn",
@@ -508,6 +676,246 @@
         "start_offset_min": 68,
         "note": "Khu vực ven đê, hay ngập cục bộ tại các đoạn đường thấp khi có lũ sông Đáy.",
         "solution": "Theo dõi mực nước sông Đáy; sẵn sàng sơ tán khi mực nước đạt báo động 2."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7285,
+          20.9528
+        ]
+      },
+      "properties": {
+        "id": "bien-giang",
+        "name": "Ngã tư Biên Giang (QL6 - đường tỉnh lộ)",
+        "street": "Đường Biên Giang / QL6",
+        "ward": "Phường Biên Giang",
+        "district": "Hà Đông",
+        "elevation_m": 5.6,
+        "historical_max_depth_cm": 42,
+        "base_depth_cm": 24,
+        "risk_level": "high",
+        "start_offset_min": 40,
+        "note": "Điểm trũng cửa ngõ phía Tây Hà Đông, nước dồn từ QL6 khi mưa lớn.",
+        "solution": "Phân luồng xe tải sang đường vành đai; mở tối đa ga thu hai bên QL6."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7538,
+          20.9485
+        ]
+      },
+      "properties": {
+        "id": "phu-luong",
+        "name": "Đường Phú Lương (đoạn chợ và khu dân cư)",
+        "street": "Đường Phú Lương",
+        "ward": "Phường Phú Lương",
+        "district": "Hà Đông",
+        "elevation_m": 5.3,
+        "historical_max_depth_cm": 38,
+        "base_depth_cm": 22,
+        "risk_level": "high",
+        "start_offset_min": 38,
+        "note": "Lòng đường hẹp, hệ thống cống cũ; dễ ngập nửa bánh xe máy sau mưa rào.",
+        "solution": "Nạo vét cống ngang đường; cảnh báo cư dân hạn chế xe máy giờ mưa đỉnh."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7358,
+          20.9412
+        ]
+      },
+      "properties": {
+        "id": "dong-mai",
+        "name": "Khu vực Đồng Mai (đường vào khu công nghiệp)",
+        "street": "Đường Đồng Mai",
+        "ward": "Phường Đồng Mai",
+        "district": "Hà Đông",
+        "elevation_m": 5,
+        "historical_max_depth_cm": 45,
+        "base_depth_cm": 26,
+        "risk_level": "high",
+        "start_offset_min": 35,
+        "note": "Địa hình thấp ven sông Đáy, ngập lan nhanh khi mưa kết hợp triều cường nội đồng.",
+        "solution": "Theo dõi mực nước sông Đáy; vận hành bơm tiêu khu vực Đồng Mai."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7768,
+          20.9715
+        ]
+      },
+      "properties": {
+        "id": "cho-ha-dong",
+        "name": "Khu vực Chợ Hà Đông (Quang Trung - Trần Phú)",
+        "street": "Đường Quang Trung gần Chợ Hà Đông",
+        "ward": "Phường Quang Trung",
+        "district": "Hà Đông",
+        "elevation_m": 5.5,
+        "historical_max_depth_cm": 40,
+        "base_depth_cm": 23,
+        "risk_level": "high",
+        "start_offset_min": 32,
+        "note": "Đông người và xe; ga thu dễ tắc rác chợ làm nước ứ trên mặt đường.",
+        "solution": "Túc trực vớt rác ga thu; hạn chế đậu xe hai bên lòng đường khi mưa lớn."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7795,
+          20.9688
+        ]
+      },
+      "properties": {
+        "id": "yet-kieu",
+        "name": "Phố Yết Kiêu (đoạn trung tâm hành chính)",
+        "street": "Phố Yết Kiêu",
+        "ward": "Phường Hà Cầu",
+        "district": "Hà Đông",
+        "elevation_m": 5.7,
+        "historical_max_depth_cm": 32,
+        "base_depth_cm": 18,
+        "risk_level": "medium",
+        "start_offset_min": 48,
+        "note": "Ngập cục bộ trước cổng cơ quan khi mưa dồn dập kéo dài trên 1 giờ.",
+        "solution": "Bơm di động hỗ trợ; hướng dẫn cán bộ/công chức đi lối phụ cao hơn."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7888,
+          20.9662
+        ]
+      },
+      "properties": {
+        "id": "tram-bom-cau-do",
+        "name": "Trạm bơm Cầu Đơ - ven sông Nhuệ",
+        "street": "Khu vực Trạm bơm Cầu Đơ",
+        "ward": "Phường Phúc La",
+        "district": "Hà Đông",
+        "elevation_m": 4.9,
+        "historical_max_depth_cm": 55,
+        "base_depth_cm": 30,
+        "risk_level": "very_high",
+        "start_offset_min": 28,
+        "note": "Điểm tiêu nước trọng yếu; khi sông Nhuệ dâng, nước nội thị khó thoát.",
+        "solution": "Vận hành liên tục tổ máy Cầu Đơ; cảnh báo khu dân cư ven sông sơ tán khi báo động II."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7812,
+          20.9695
+        ]
+      },
+      "properties": {
+        "id": "benh-vien-ha-dong",
+        "name": "Bệnh viện Đa khoa Hà Đông (đường Trần Phú)",
+        "street": "Đường Trần Phú",
+        "ward": "Phường Hà Cầu",
+        "district": "Hà Đông",
+        "elevation_m": 5.6,
+        "historical_max_depth_cm": 35,
+        "base_depth_cm": 20,
+        "risk_level": "medium",
+        "start_offset_min": 45,
+        "note": "Cần giữ lối vào cấp cứu thông suốt; ngập nhẹ vẫn ảnh hưởng xe cứu thương.",
+        "solution": "Ưu tiên hút nước lối vào viện; bố trí biển chỉ dẫn đường vòng khi ngập."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7425,
+          20.9385
+        ]
+      },
+      "properties": {
+        "id": "thanh-ha-kdt",
+        "name": "KĐT Thanh Hà (trục đường nội khu thấp)",
+        "street": "Đường nội khu Thanh Hà",
+        "ward": "Phường Cự Khê / Thanh Hà",
+        "district": "Hà Đông",
+        "elevation_m": 5.2,
+        "historical_max_depth_cm": 40,
+        "base_depth_cm": 22,
+        "risk_level": "high",
+        "start_offset_min": 42,
+        "note": "Một số đoạn nội khu thấp hơn nền đường vành đai, nước đọng sau mưa.",
+        "solution": "Bơm cục bộ khu trũng; khuyến cáo cư dân để xe tầng cao khi có cảnh báo mưa lớn."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7702,
+          20.9838
+        ]
+      },
+      "properties": {
+        "id": "nga-tu-to-huu-ltl",
+        "name": "Ngã tư Tố Hữu - Lê Trọng Tấn (cửa ngõ Hà Đông)",
+        "street": "Tố Hữu × Lê Trọng Tấn",
+        "ward": "Phường Mộ Lao / Trung Văn",
+        "district": "Hà Đông",
+        "elevation_m": 5.4,
+        "historical_max_depth_cm": 48,
+        "base_depth_cm": 28,
+        "risk_level": "high",
+        "start_offset_min": 30,
+        "note": "Nút giao đông xe; nước từ các nhánh đổ về dễ gây ùn tắc và ngập bánh xe.",
+        "solution": "CSGT phân luồng sớm; ưu tiên tuyến tránh qua đường đôi cao hơn phía KĐT."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7648,
+          20.9565
+        ]
+      },
+      "properties": {
+        "id": "van-phu-cong-vien",
+        "name": "Công viên Hồ Văn Phú - đường bao quanh hồ",
+        "street": "Đường bao hồ Văn Phú",
+        "ward": "Phường Phú La",
+        "district": "Hà Đông",
+        "elevation_m": 5.1,
+        "historical_max_depth_cm": 36,
+        "base_depth_cm": 21,
+        "risk_level": "medium",
+        "start_offset_min": 40,
+        "note": "Khi hồ đầy, đường bao quanh dễ bị nước tràn mép.",
+        "solution": "Hạ mực nước hồ trước mưa lớn; rào đoạn đường thấp quanh hồ."
       }
     }
   ]

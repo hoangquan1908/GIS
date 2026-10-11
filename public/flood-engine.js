@@ -36,7 +36,7 @@ export async function fetchWeatherDirect(force=false) {
   if(!force&&_weatherCache&&Date.now()-_weatherTime<900000)return _weatherCache;
   if(_weatherPending)return _weatherPending;
   _weatherPending=(async()=>{
-    const url='https://api.open-meteo.com/v1/forecast?latitude=20.9708&longitude=105.7788&hourly=precipitation,precipitation_probability,temperature_2m&past_days=1&forecast_days=3&timezone=Asia%2FBangkok';
+    const url='https://api.open-meteo.com/v1/forecast?latitude=20.9708&longitude=105.7788&hourly=precipitation,precipitation_probability,temperature_2m,weathercode&past_days=1&forecast_days=3&timezone=Asia%2FBangkok';
     const res=await fetch(url,{signal:AbortSignal.timeout(15000)});
     if(!res.ok)throw new Error('Không kết nối được nguồn thời tiết.');
     const data=await res.json();
@@ -607,57 +607,68 @@ export function getAiRain24hAnalysis(weatherData, now = Date.now()) {
   };
 }
 
+/** WMO weathercode → nhãn tiếng Việt ngắn */
+export function weatherCondition(code) {
+  const c = Number(code);
+  if (!Number.isFinite(c)) return { icon: '❔', label: 'Chưa rõ', tone: 'unknown' };
+  if (c === 0) return { icon: '☀️', label: 'Trời nắng', tone: 'sunny' };
+  if (c <= 3) return { icon: '⛅', label: c === 1 ? 'Ít mây' : c === 2 ? 'Có mây' : 'U ám', tone: 'cloudy' };
+  if (c <= 48) return { icon: '🌫️', label: 'Sương mù / mờ', tone: 'fog' };
+  if (c <= 57) return { icon: '🌦️', label: 'Mưa phùn', tone: 'drizzle' };
+  if (c <= 67) return { icon: '🌧️', label: c >= 65 ? 'Mưa to' : 'Mưa', tone: 'rain' };
+  if (c <= 77) return { icon: '🌨️', label: 'Mưa tuyết / hạt băng', tone: 'snow' };
+  if (c <= 82) return { icon: '🌧️', label: c >= 82 ? 'Mưa rào mạnh' : 'Mưa rào', tone: 'rain' };
+  if (c <= 86) return { icon: '🌨️', label: 'Mưa tuyết rào', tone: 'snow' };
+  if (c <= 99) return { icon: '⛈️', label: c >= 95 ? 'Dông kèm mưa' : 'Dông', tone: 'storm' };
+  return { icon: '☁️', label: 'Thời tiết đặc biệt', tone: 'other' };
+}
+
 /**
- * Action Solutions: 4 comprehensive mitigation tiers
+ * Action Solutions: 3 đối tượng — cơ quan chức năng, người dân, tiêu thoát nước
  */
 export function getActionableSolutions(rainRate = 35) {
+  const heavy = rainRate >= 40;
   return [
     {
-      category: 'Cảnh báo nhân dân & Người tham gia giao thông',
-      priority: 'Khẩn cấp',
-      icon: '🚗',
-      color: '#dc2626',
-      actions: [
-        'Hạn chế phương tiện đi vào Hầm chui Nguyễn Trãi - Khuất Duy Tiến, ngã ba Ba La, và cổng KĐT Xa La khi mưa lớn (>30 mm/h).',
-        'Cư dân các chung cư tại KĐT Văn Quán, Xa La, Mộ Lao chủ động di chuyển ô tô ra khỏi tầng hầm thấp lên khu vực bãi nổi an toàn.',
-        'Sử dụng các tuyến tránh cao ráo theo AI khuyến nghị: Tuyến Cầu Trắng - Tô Hiệu, đường đôi 24m KĐT Văn Phú, trục Tố Hữu.',
-        'Theo dõi ứng dụng Hà Đông Flood Lab để cập nhật thời gian thực các điểm ngập trước khi xuất phát.'
-      ]
-    },
-    {
-      category: 'Vận hành hạ tầng & Tiêu thoát nước',
-      priority: 'Ưu tiên 1',
-      icon: '🛟',
-      color: '#ea580c',
-      actions: [
-        'Kích hoạt tối đa 10/10 tổ máy Trạm bơm Yên Nghĩa (công suất 120 m³/s) để hạ thấp tối đa mực nước Kênh La Khê xả ra Sông Đáy.',
-        'Trạm bơm Cầu Đơ và Đa Sỹ vận hành liên tục 4 tổ máy tiêu nước nội thị vùng lõi Hà Đông ra sông Nhuệ.',
-        'Công nhân Xí nghiệp thoát nước số 8 túc trực tại 16 điểm ngập trọng yếu, mở nắp cống thu có rào chắn bảo vệ và vớt rác rào chắn.',
-        'Hạ cống điều tiết các hồ điều hòa (Hồ Văn Quán, Hồ Đầm Khê, Hồ Mộ Lao) về mực nước chết trước 2–3 giờ để sẵn sàng trữ lũ.'
-      ]
-    },
-    {
-      category: 'Điều phối giao thông & Cứu hộ cứu nạn',
-      priority: 'Chủ động',
-      icon: '👮',
+      category: 'Cảnh báo cơ quan chức năng',
+      audience: 'authority',
+      priority: heavy ? 'Khẩn cấp' : 'Chủ động',
+      icon: '🏛️',
       color: '#2563eb',
+      summary: 'Kịp thời điều phối lực lượng và phân luồng khi có nguy cơ ngập.',
       actions: [
-        'Đội CSGT số 7 và số 10 cắm chốt từ xa tại ngã tư Lê Trọng Tấn - Quang Trung, Vạn Phúc và Trần Phú để phân luồng xe máy và xe gầm thấp.',
-        'Bố trí xe cứu hộ cẩu kéo chuyên dụng túc trực 24/7 tại chân cầu vượt Ba La, Hầm chui Nguyễn Trãi sẵn sàng kéo xe chết máy.',
-        'Phát thanh bản tin cảnh báo ngập qua hệ thống loa truyền thanh thông minh các phường Phúc La, Mộ Lao, Dương Nội, Yên Nghĩa.',
-        'Lực lượng dân quân tự vệ và cứu hộ phường chuẩn bị xuồng cứu hộ và xe gầm cao hỗ trợ người già, học sinh qua các điểm ngập sâu.'
+        'UBND phường / trung tâm điều hành: theo dõi bản đồ điểm nóng Hà Đông và kích hoạt phương án ứng phó theo mức mưa hiện tại (' + rainRate + ' mm/h).',
+        'CSGT cắm chốt từ xa tại Hầm chui Nguyễn Trãi, ngã ba Ba La, Tố Hữu – Lê Trọng Tấn và Quang Trung để phân luồng xe gầm thấp.',
+        'Phát thanh loa truyền thanh phường Phúc La, Mộ Lao, Dương Nội, Yên Nghĩa, Biên Giang khi có điểm nguy cơ cao/rất cao.',
+        'Bố trí cứu hộ – cứu nạn (xe cẩu, xuồng) túc trực tại các điểm ngập sâu lịch sử; sẵn sàng sơ tán khu vực ven sông Nhuệ khi mực nước dâng.'
       ]
     },
     {
-      category: 'Giải pháp công trình & Quy hoạch đô thị bền vững',
-      priority: 'Dài hạn',
-      icon: '🏗️',
-      color: '#059669',
+      category: 'Cảnh báo người dân',
+      audience: 'citizen',
+      priority: heavy ? 'Khẩn cấp' : 'Theo dõi',
+      icon: '📢',
+      color: '#dc2626',
+      summary: 'Biết tình trạng ngập để hạn chế ra đường và chọn tuyến an toàn.',
       actions: [
-        'Đẩy nhanh giải phóng mặt bằng cứng hóa đoạn kênh dẫn La Khê để phát huy tối đa 100% công suất Trạm bơm Yên Nghĩa.',
-        'Xây dựng bể ngầm điều tiết thông minh (Smart Underground Detention) tại công viên và bãi đỗ xe công cộng khu vực Ba La và Xa La.',
-        'Tăng diện tích bề mặt thấm nước: Thay thế vỉa hè bê tông đặc bằng gạch tự chèn thấm nước và phát triển vườn mưa (Rain Gardens) tại các KĐT mới.',
-        'Số hóa mạng lưới cống ngầm Hà Đông bằng cảm biến mực nước IoT truyền dữ liệu trực tiếp về trung tâm điều hành Smart City.'
+        'Hạn chế ra đường khi bản đồ hiện cảnh báo đỏ/cam; ưu tiên ở lại nơi cao ráo hoặc làm việc từ xa nếu có thể.',
+        'Tránh Hầm chui Nguyễn Trãi, ngã ba Ba La, Cầu Đơ, Biên Giang, Phú Lương khi điểm này đang gắn ghi chú cảnh báo trên bản đồ.',
+        'Trước khi xuất phát: dùng mục “Tuyến tránh ngập” để chọn đường vòng cao hơn; không cố đi qua đoạn nước đã ngập nửa bánh xe máy.',
+        'Gửi báo cáo cộng đồng (mức sâu, ảnh, vị trí) để hàng xóm và điều phối viên nắm tình hình thực tế.'
+      ]
+    },
+    {
+      category: 'Vận hành hạ tầng & tiêu thoát nước',
+      audience: 'drainage',
+      priority: 'Ưu tiên vận hành',
+      icon: '💧',
+      color: '#059669',
+      summary: 'Vận hành trạm bơm, hồ điều hòa và thông tắc để giảm ngập mặt đường.',
+      actions: [
+        'Trạm bơm Yên Nghĩa, Cầu Đơ, Đa Sỹ: tăng công suất tiêu nước ra sông Đáy / sông Nhuệ theo diễn biến mưa.',
+        'Hạ mực nước hồ điều hòa (Văn Quán, Đầm Khê, Văn Phú, Mộ Lao) trước đỉnh mưa để tăng dung tích trữ.',
+        'Xí nghiệp thoát nước túc trực vớt rác, mở ga thu tại Chợ Hà Đông, Quang Trung, Phú Lương và các điểm ghi chú tắc nghẽn.',
+        'Kiểm tra kênh La Khê – Hồng Hà; ưu tiên thông dòng trước khi mưa lớn kéo dài trên 3 giờ.'
       ]
     }
   ];

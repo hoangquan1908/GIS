@@ -2,7 +2,7 @@ import { mkdir,writeFile } from 'node:fs/promises';
 const root=new URL('../data/',import.meta.url);
 await mkdir(root,{recursive:true});
 const datasets=[
- ['weather-forecast.json','https://api.open-meteo.com/v1/forecast?latitude=20.9708&longitude=105.7788&hourly=precipitation,precipitation_probability,temperature_2m&past_days=1&forecast_days=3&timezone=Asia%2FBangkok'],
+ ['weather-forecast.json','https://api.open-meteo.com/v1/forecast?latitude=20.9708&longitude=105.7788&hourly=precipitation,precipitation_probability,temperature_2m,weathercode&past_days=1&forecast_days=3&timezone=Asia%2FBangkok'],
  ['rainfall-history-2025.json','https://archive-api.open-meteo.com/v1/archive?latitude=20.9708&longitude=105.7788&start_date=2025-01-01&end_date=2025-12-31&hourly=precipitation,temperature_2m&models=era5&timezone=Asia%2FBangkok']
 ];
 let failed=false;

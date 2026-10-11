@@ -21,18 +21,16 @@
 <body>
   <a class="skip-link" href="#main">Đến nội dung chính</a>
   <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính">
-    <a class="brand" href="#dashboard"><span class="brand-mark">≈</span><span>HÀ ĐÔNG<small>FLOOD LAB</small></span></a>
+    <a class="brand" href="#gis-map-section"><span class="brand-mark">≈</span><span>HÀ ĐÔNG<small>FLOOD LAB</small></span></a>
     <div class="workspace-label"><span class="status-dot"></span> Không gian nghiên cứu <span class="version">2.0</span></div>
     <p class="nav-caption">KHÔNG GIAN LÀM VIỆC</p>
-    <nav>
-      <a href="#dashboard" class="active" aria-current="location"><span class="nav-icon">▦</span>Tổng quan <span class="nav-arrow">↗</span></a>
-      <a href="#early-warning-section"><span class="nav-icon">🔔</span>Cảnh báo sớm</a>
-      <a href="#gis-map-section"><span class="nav-icon">◎</span>Bản đồ khu vực</a>
-      <a href="#rain-monitoring-section"><span class="nav-icon">☂</span>Dự báo mưa & AI 24h</a>
-      <a href="#route-finder-section"><span class="nav-icon">🗺️</span>Tìm tuyến tránh ngập</a>
-      <a href="#scenario-section"><span class="nav-icon">◴</span>Kịch bản & Mô phỏng</a>
-      <a href="#solutions-section"><span class="nav-icon">🛟</span>Giải pháp ứng phó</a>
-      <a href="#community-section"><span class="nav-icon">♧</span>Báo cáo cộng đồng</a>
+        <nav>
+      <a href="#gis-map-section" class="active" aria-current="location"><span class="nav-icon">◎</span>1. Bản đồ khu vực <span class="nav-arrow">↗</span></a>
+      <a href="#rain-monitoring-section"><span class="nav-icon">☂</span>2. Dự báo khí tượng</a>
+      <a href="#route-finder-section"><span class="nav-icon">🗺️</span>3. Tuyến tránh ngập</a>
+      <a href="#community-section"><span class="nav-icon">♧</span>4. Báo cáo cộng đồng</a>
+      <a href="#solutions-section"><span class="nav-icon">🛟</span>5. Giải pháp ứng phó</a>
+      <a href="#scenario-section"><span class="nav-icon">◴</span>Kịch bản mô phỏng</a>
       <a href="#sources-section"><span class="nav-icon">▤</span>Dữ liệu & phương pháp</a>
     </nav>
     <div class="sidebar-note"><span class="outline-icon">⌁</span><h3>Hiểu dữ liệu.<br>Chủ động hơn.</h3><p>Khám phá lượng mưa và các khu vực cần quan tâm tại Hà Đông.</p><a href="#sources-section">Tìm hiểu dữ liệu <span>↗</span></a></div>
@@ -41,45 +39,12 @@
   <button class="nav-scrim" id="nav-scrim" aria-label="Đóng điều hướng" hidden></button>
   <main id="main">
     <header class="topbar">
-      <div class="breadcrumb"><button id="menu-btn" class="icon-button mobile-only" aria-label="Mở điều hướng" aria-controls="sidebar" aria-expanded="false">☰</button><span>Không gian làm việc</span><span class="slash">/</span><b id="page-label">Tổng quan</b></div>
+      <div class="breadcrumb"><button id="menu-btn" class="icon-button mobile-only" aria-label="Mở điều hướng" aria-controls="sidebar" aria-expanded="false">☰</button><span>Không gian làm việc</span><span class="slash">/</span><b id="page-label">Bản đồ khu vực</b></div>
       <div class="topbar-actions"><span id="connection-status" class="connection"><i></i> Có kết nối mạng</span><time id="clock"></time><span class="avatar" aria-label="Hà Đông">HĐ</span></div>
     </header>
     <div class="content">
-      <section id="dashboard" aria-labelledby="overview-title">
-        <div class="page-heading"><div><p class="eyebrow">HÀ ĐÔNG FLOOD LAB / TỔNG QUAN</p><h1 id="overview-title">Một góc nhìn, chủ động hơn<span>.</span></h1><p class="muted">Theo dõi lượng mưa, khám phá bản đồ và kiểm tra các kịch bản ngập úng.</p></div><button id="refresh-btn" class="button secondary">↻ <span>Cập nhật dữ liệu</span></button></div>
-        <div class="overview-banner"><div class="banner-copy"><span class="badge light"><i class="status-dot"></i> KHÔNG GIAN GIS & NGHIÊN CỨU</span><h2>Hiểu khu vực của bạn.<br>Theo dõi những thay đổi.</h2><p>Dự báo mưa từ Open-Meteo kết hợp bản đồ địa điểm và công cụ mô phỏng để khám phá các tình huống mưa lớn.</p><a href="#gis-map-section" class="button light-button">Khám phá bản đồ <span>↗</span></a><span class="banner-footnote">Dữ liệu mô phỏng luôn được gắn nhãn riêng.</span></div><div class="contour-art" aria-hidden="true"><div class="contour c1"></div><div class="contour c2"></div><div class="contour c3"></div><div class="contour c4"></div><div class="contour c5"></div><span class="map-pin pin-one">●</span><span class="map-pin pin-two">●</span><div class="art-location"><span class="status-dot"></span> HÀ ĐÔNG <small>20.9708° N · 105.7788° E</small></div><span class="art-compass">N<br>↑</span></div></div>
-        <div class="kpi-grid">
-          <article class="kpi-card"><div class="kpi-top"><span>Địa điểm tham chiếu</span><span class="metric-icon green">◎</span></div><strong id="kpi-sites">—</strong><p>Trong bộ dữ liệu nghiên cứu <a href="#gis-map-section" aria-label="Xem địa điểm">↗</a></p></article>
-          <article class="kpi-card"><div class="kpi-top"><span>Tổng mưa 24 giờ tới</span><span class="metric-icon blue">☂</span></div><strong id="kpi-rain">— <small>mm</small></strong><p id="kpi-rain-note">Đang tải dự báo Open-Meteo</p></article>
-          <article class="kpi-card"><div class="kpi-top"><span>Điểm nguy cơ cao</span><span class="metric-icon amber">△</span></div><strong id="kpi-risk">— <small>điểm</small></strong><p><span class="mini-tag">Mô phỏng</span> <span id="kpi-scenario-note">Với mưa 35 mm/h</span></p></article>
-          <article class="kpi-card"><div class="kpi-top"><span>Báo cáo của bạn</span><span class="metric-icon purple">▤</span></div><strong id="kpi-reports">—</strong><p>Lưu trên trình duyệt này <a href="#community-section" aria-label="Xem báo cáo">↗</a></p></article>
-        </div>
-        <div class="notice"><span class="notice-icon">i</span><p><b>Phân biệt dự báo và mô phỏng.</b> Mưa là dự báo khí tượng; độ sâu, vùng lan và tuyến đường là kịch bản minh họa, chưa được kiểm định để cảnh báo thực tế.</p><a href="#sources-section">Chi tiết ↗</a></div>
-      </section>
-
-      <!-- EARLY WARNING SECTION -->
-      <section id="early-warning-section" class="section-block card early-warning-card" aria-labelledby="ew-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">00 / CẢNH BÁO SỚM</p><h2 id="ew-title">⚠️ Cảnh báo ngập theo thời gian thực</h2></div>
-          <span id="ew-level-badge" class="ew-badge level-normal">🟢 BÌNH THƯỜNG</span>
-        </div>
-        <p id="ew-banner" class="ew-banner-text">Đang tính toán kịch bản từ dữ liệu mưa…</p>
-        <div class="ew-depth-legend">
-          <span class="depth-chip safe">✅ Khô ráo</span>
-          <span class="depth-chip low">🥾 Cổ chân</span>
-          <span class="depth-chip medium">🛵 Nửa bánh xe</span>
-          <span class="depth-chip high">⚠️ Toàn bánh xe</span>
-          <span class="depth-chip very_high">🚨 Ngang hông</span>
-          <span class="depth-chip critical">🆘 Ngập sâu</span>
-        </div>
-        <div id="ew-warnings-list" class="ew-warnings-list"></div>
-        <div class="ew-actions">
-          <a href="#route-finder-section" class="button primary small">🗺️ Tìm tuyến tránh ngập</a>
-          <a href="#gis-map-section" class="button secondary small">◎ Xem bản đồ</a>
-        </div>
-      </section>
       <section id="gis-map-section" class="section-block" aria-labelledby="map-title">
-        <div class="section-heading"><div><p class="eyebrow">01 / KHÁM PHÁ KHÔNG GIAN</p><h2 id="map-title">Bản đồ khu vực <span class="count-badge" id="map-count">—</span></h2></div><div class="button-row"><button id="share-view" class="button secondary small">↗ Chia sẻ bộ lọc</button><button id="locate-btn" class="button secondary small">⌖ Vị trí của tôi</button><button id="reset-map-btn" class="button secondary small">◎ Về trung tâm</button></div></div>
+        <div class="section-heading"><div><p class="eyebrow">01 / BẢN ĐỒ KHU VỰC</p><h2 id="map-title">Bản đồ cảnh báo ngập Hà Đông <span class="count-badge" id="map-count">—</span></h2></div><div class="button-row"><button id="share-view" class="button secondary small">↗ Chia sẻ bộ lọc</button><button id="locate-btn" class="button secondary small">⌖ Vị trí của tôi</button><button id="reset-map-btn" class="button secondary small">◎ Về trung tâm</button></div></div>
         <div class="map-workspace">
           <div class="map-panel">
             <div class="map-toolbar" role="group" aria-label="Lớp bản đồ">
@@ -128,12 +93,52 @@
         </div>
         <div id="location-detail" class="detail-panel" hidden></div>
       </section>
+
+      <section id="early-warning-section" class="section-block card early-warning-card" aria-labelledby="ew-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">BẢNG CẢNH BÁO</p><h2 id="ew-title">Các điểm đang cảnh báo (đồng bộ ghi chú trên bản đồ)</h2></div>
+          <span id="ew-level-badge" class="ew-badge level-normal">🟢 BÌNH THƯỜNG</span>
+        </div>
+        <p id="ew-banner" class="ew-banner-text">Đang tính toán kịch bản từ dữ liệu mưa…</p>
+        <div class="ew-depth-legend">
+          <span class="depth-chip safe">✅ Khô ráo</span>
+          <span class="depth-chip low">🥾 Cổ chân</span>
+          <span class="depth-chip medium">🛵 Nửa bánh xe</span>
+          <span class="depth-chip high">⚠️ Toàn bánh xe</span>
+          <span class="depth-chip very_high">🚨 Ngang hông</span>
+          <span class="depth-chip critical">🆘 Ngập sâu</span>
+        </div>
+        <div id="ew-warnings-list" class="ew-warnings-list"></div>
+        <div class="ew-actions">
+          <a href="#route-finder-section" class="button primary small">🗺️ Tìm tuyến tránh ngập</a>
+          <a href="#gis-map-section" class="button secondary small">◎ Xem bản đồ</a>
+        </div>
+      </section>
+
+      <section id="dashboard" aria-labelledby="overview-title">
+        <div class="page-heading"><div><p class="eyebrow">HÀ ĐÔNG FLOOD LAB / TỔNG QUAN</p><h1 id="overview-title">Theo dõi ngập úng Hà Đông<span>.</span></h1><p class="muted">Năm mục chính: bản đồ cảnh báo · dự báo thời tiết · tuyến tránh ngập · báo cáo cộng đồng · giải pháp ứng phó.</p></div><button id="refresh-btn" class="button secondary">↻ <span>Cập nhật dữ liệu</span></button></div>
+        <div class="overview-banner"><div class="banner-copy"><span class="badge light"><i class="status-dot"></i> KHÔNG GIAN GIS & NGHIÊN CỨU</span><h2>Bản đồ điểm nóng.<br>Cảnh báo ngay trên từng điểm.</h2><p>Chọn mục 1 để xem bản đồ — điểm nguy cơ cao hiện ghi chú cảnh báo ngay trên chấm tròn.</p><a href="#gis-map-section" class="button light-button">Mở bản đồ khu vực <span>↗</span></a><span class="banner-footnote">Dữ liệu mô phỏng luôn được gắn nhãn riêng.</span></div><div class="contour-art" aria-hidden="true"><div class="contour c1"></div><div class="contour c2"></div><div class="contour c3"></div><div class="contour c4"></div><div class="contour c5"></div><span class="map-pin pin-one">●</span><span class="map-pin pin-two">●</span><div class="art-location"><span class="status-dot"></span> HÀ ĐÔNG <small>20.9708° N · 105.7788° E</small></div><span class="art-compass">N<br>↑</span></div></div>
+        <div class="kpi-grid">
+          <article class="kpi-card"><div class="kpi-top"><span>Địa điểm tham chiếu</span><span class="metric-icon green">◎</span></div><strong id="kpi-sites">—</strong><p>Trong bộ dữ liệu nghiên cứu <a href="#gis-map-section" aria-label="Xem địa điểm">↗</a></p></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Tổng mưa 24 giờ tới</span><span class="metric-icon blue">☂</span></div><strong id="kpi-rain">— <small>mm</small></strong><p id="kpi-rain-note">Đang tải dự báo Open-Meteo</p></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Điểm nguy cơ cao</span><span class="metric-icon amber">△</span></div><strong id="kpi-risk">— <small>điểm</small></strong><p><span class="mini-tag">Mô phỏng</span> <span id="kpi-scenario-note">Với mưa 35 mm/h</span></p></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Báo cáo của bạn</span><span class="metric-icon purple">▤</span></div><strong id="kpi-reports">—</strong><p>Lưu trên trình duyệt này <a href="#community-section" aria-label="Xem báo cáo">↗</a></p></article>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><p><b>Phân biệt dự báo và mô phỏng.</b> Mưa là dự báo khí tượng; độ sâu, vùng lan và tuyến đường là kịch bản minh họa, chưa được kiểm định để cảnh báo thực tế.</p><a href="#sources-section">Chi tiết ↗</a></div>
+      </section>
+
       <section id="rain-monitoring-section" class="section-block card" aria-labelledby="rain-title">
-        <div class="section-heading"><div><p class="eyebrow">02 / DỰ BÁO KHÍ TƯỢNG</p><h2 id="rain-title">Nhịp mưa trong những giờ tới</h2></div><div class="segmented" role="group" aria-label="Khoảng dự báo"><button data-hours="6" aria-pressed="false">6 giờ</button><button data-hours="12" aria-pressed="false">12 giờ</button><button data-hours="24" class="active" aria-pressed="true">24 giờ</button><button data-hours="48" aria-pressed="false">48 giờ</button><button data-hours="72" aria-pressed="false">72 giờ</button></div></div>
+        <div class="section-heading"><div><p class="eyebrow">02 / DỰ BÁO KHÍ TƯỢNG</p><h2 id="rain-title">Dự báo thời tiết: nắng, mưa & lượng mưa</h2></div><div class="segmented" role="group" aria-label="Khoảng dự báo"><button data-hours="6" aria-pressed="false">6 giờ</button><button data-hours="12" aria-pressed="false">12 giờ</button><button data-hours="24" class="active" aria-pressed="true">24 giờ</button><button data-hours="48" aria-pressed="false">48 giờ</button><button data-hours="72" aria-pressed="false">72 giờ</button></div></div>
+        <div id="weather-now-card" class="weather-now-grid" aria-live="polite">
+          <article class="weather-now-item"><span class="wn-label">Hiện tại</span><strong id="wn-condition">—</strong><small id="wn-temp">—</small></article>
+          <article class="weather-now-item"><span class="wn-label">Lượng mưa giờ này</span><strong id="wn-rain-now">—</strong><small>mm</small></article>
+          <article class="weather-now-item"><span class="wn-label">Xác suất mưa</span><strong id="wn-prob">—</strong><small id="wn-prob-note">giờ tới</small></article>
+          <article class="weather-now-item"><span class="wn-label">Xu hướng</span><strong id="wn-trend">—</strong><small id="wn-trend-note">6 giờ tới</small></article>
+        </div>
         <div class="weather-meta"><p id="weather-status" role="status">Đang kết nối Open-Meteo…</p><button id="retry-weather" class="text-button" hidden>Thử lại ↻</button></div>
         <div class="chart-summary"><span id="rain-total">— <small>mm tích lũy</small></span><p id="rain-peak">Đang tải dữ liệu dự báo</p><span class="chart-unit"><i class="legend-dot" style="--dot:#23836b"></i> Lượng mưa / giờ (mm)</span></div>
         <div id="rain-chart" class="rain-chart" role="img" aria-label="Biểu đồ lượng mưa dự báo"></div>
-        <details class="weather-table"><summary>Xem bảng dữ liệu theo giờ</summary><div class="table-scroll"><table><thead><tr><th scope="col">Thời gian (UTC+7)</th><th scope="col">Lượng mưa (mm)</th></tr></thead><tbody id="rain-table-body"></tbody></table></div></details>
+        <details class="weather-table"><summary>Xem bảng dữ liệu theo giờ</summary><div class="table-scroll"><table><thead><tr><th scope="col">Thời gian (UTC+7)</th><th scope="col">Thời tiết</th><th scope="col">Nhiệt độ</th><th scope="col">Lượng mưa (mm)</th><th scope="col">Xác suất</th></tr></thead><tbody id="rain-table-body"></tbody></table></div></details>
         <div id="ai-24h-rain-card" class="ai-24h-card">
           <div class="ai-card-header">
             <div class="ai-card-badge"><span class="hud-dot"></span><span>AI PHÂN TÍCH MƯA 24H TỚI</span></div>
@@ -158,8 +163,58 @@
         </div>
         <div class="card-footer"><span class="small-text muted">Một ô dự báo đại diện Hà Đông · Nguồn: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></span><div class="button-row"><button id="export-csv" class="text-button" disabled>↓ Xuất CSV</button><button id="export-json" class="text-button" disabled>↓ JSON</button><button id="print-btn" class="text-button">In báo cáo</button></div></div>
       </section>
+
+      <section id="route-finder-section" class="section-block card" aria-labelledby="rf-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / TUYẾN ĐƯỜNG TRÁNH NGẬP</p><h2 id="rf-title">Cảnh báo tuyến ngập & tìm đường tránh</h2></div>
+          <span class="badge light"><i class="hud-dot"></i> AI ĐIỀU HƯỚNG</span>
+        </div>
+        <p class="muted">Nhập điểm xuất phát và điểm đến — hệ thống sẽ kiểm tra xem lộ trình có đi qua khu vực ngập không và đề xuất tuyến an toàn.</p>
+        <div class="route-finder-inputs">
+          <div class="rf-input-group">
+            <label class="field-label" for="rf-from">📍 Điểm xuất phát</label>
+            <input id="rf-from" type="text" class="rf-input" placeholder="VD: Nguyễn Trãi, Mộ Lao, Ba La…" autocomplete="off" list="rf-from-list">
+            <datalist id="rf-from-list"></datalist>
+          </div>
+          <div class="rf-arrow">→</div>
+          <div class="rf-input-group">
+            <label class="field-label" for="rf-to">🏁 Điểm đến</label>
+            <input id="rf-to" type="text" class="rf-input" placeholder="VD: Văn Phú, Xa La, Hà Đông…" autocomplete="off" list="rf-to-list">
+            <datalist id="rf-to-list"></datalist>
+          </div>
+          <button id="rf-search-btn" class="button primary rf-search-btn">🔍 Tìm đường</button>
+        </div>
+        <div class="rf-quick-routes">
+          <span class="small-text muted">Tuyến gợi ý nhanh:</span>
+          <button class="rf-quick-btn" data-from="Bệnh viện 103" data-to="KĐT Văn Phú">BV 103 → Văn Phú</button>
+          <button class="rf-quick-btn" data-from="Ngã tư Sở" data-to="Yên Nghĩa">Ngã tư Sở → Yên Nghĩa</button>
+          <button class="rf-quick-btn" data-from="KĐT Dương Nội" data-to="Cầu Trắng">Dương Nội → Cầu Trắng</button>
+          <button class="rf-quick-btn" data-from="KĐT Mộ Lao" data-to="Ba La">Mộ Lao → Ba La</button>
+        </div>
+        <div id="rf-result" class="rf-result" hidden></div>
+        <div id="rf-map-actions" class="button-row" hidden>
+          <button id="rf-show-map" class="button primary small">↗ Hiện tuyến trên bản đồ</button>
+          <button id="rf-clear-map" class="button secondary small">✕ Xóa tuyến</button>
+        </div>
+      </section>
+
+      <section id="community-section" class="section-block card" aria-labelledby="community-title">
+        <div class="section-heading"><div><p class="eyebrow">04 / BÁO CÁO CỘNG ĐỒNG</p><h2 id="community-title">Người dân gửi báo cáo khu vực ngập</h2></div>
+          <button id="open-report" class="button primary report-fab-btn">＋ Báo ngập ngay</button>
+        </div>
+        <p class="muted">Người dân gửi báo cáo nơi nào đang ngập và mức độ ngập như thế nào. Báo cáo lưu trên trình duyệt này (chưa gửi tự động tới cơ quan chức năng).</p>
+        <div class="community-toolbar"><label class="search-field"><span>⌕</span><input id="report-search" type="search" placeholder="Tìm báo cáo đã lưu…" aria-label="Tìm báo cáo"></label><div class="button-row"><button id="sample-reports-btn" class="text-button">★ Nạp dữ liệu mẫu</button><button id="import-reports" class="text-button">↑ Nhập bản sao lưu</button><input id="import-reports-file" type="file" accept=".json,application/json" aria-label="Chọn bản sao lưu JSON" hidden><button id="export-reports" class="text-button" disabled>↓ Xuất báo cáo JSON</button></div></div>
+        <div id="community-feed" class="community-feed"></div>
+      </section>
+
+      <section id="solutions-section" class="section-block card" aria-labelledby="solutions-title">
+        <div class="section-heading"><div><p class="eyebrow">05 / GIẢI PHÁP ỨNG PHÓ</p><h2 id="solutions-title">Cảnh báo cơ quan · người dân · tiêu thoát nước</h2></div><span class="badge light"><i class="status-dot"></i> 3 NHÓM ĐỐI TƯỢNG</span></div>
+        <p class="muted">Ba nhóm hành động: cảnh báo cơ quan chức năng để kịp thời điều phối; cảnh báo người dân để biết tình trạng ngập và tránh ra đường nguy hiểm; vận hành hạ tầng và tiêu thoát nước.</p>
+        <div id="solutions-grid" class="solutions-grid"></div>
+      </section>
+
       <section id="scenario-section" class="section-block" aria-labelledby="scenario-title">
-        <div class="section-heading"><div><p class="eyebrow">03 / THỬ NGHIỆM & SO SÁNH</p><h2 id="scenario-title">Nếu lượng mưa thay đổi?</h2></div><span class="badge amber-badge">MÔ PHỎNG · CHƯA KIỂM ĐỊNH</span></div>
+        <div class="section-heading"><div><p class="eyebrow">PHỤ LỤC / KỊCH BẢN</p><h2 id="scenario-title">Nếu lượng mưa thay đổi?</h2></div><span class="badge amber-badge">MÔ PHỎNG · CHƯA KIỂM ĐỊNH</span></div>
         <div class="scenario-grid">
           <div class="card scenario-controls"><h3>Thiết lập kịch bản</h3><p class="muted small-text">Thay đổi cường độ mưa để cập nhật điểm nguy cơ trên bản đồ và danh sách.</p><label class="range-label" for="scenario-rain">Cường độ mưa <output id="scenario-rain-value" for="scenario-rain">35 mm/h</output></label><input type="range" id="scenario-rain" min="0" max="100" value="35" step="0.1"><div class="range-marks"><span>0 mm/h</span><span>50 mm/h</span><span>100 mm/h</span></div><label class="field-label" for="scenario-horizon">Khoảng thời gian mô phỏng</label><select id="scenario-horizon"><option value="+30m">Sau 30 phút</option><option value="+1h" selected>Sau 1 giờ</option><option value="+2h">Sau 2 giờ</option><option value="+3h">Sau 3 giờ</option><option value="+6h">Sau 6 giờ</option><option value="+12h">Sau 12 giờ</option><option value="+24h">Sau 24 giờ</option></select><button id="use-weather-btn" class="button secondary" disabled>Dùng giờ mưa dự báo lớn nhất ↗</button><p class="small-text muted">Công thức thử nghiệm sử dụng mưa đầu vào, độ sâu cơ sở và cao độ trong bộ dữ liệu mẫu. Không phải mô hình AI đã huấn luyện.</p></div>
           <div class="card scenario-result"><div class="result-top"><span class="eyebrow">KẾT QUẢ KỊCH BẢN</span><span id="scenario-label" class="mini-tag">35 mm/h · +1h</span></div><h3 id="scenario-top">Đang tính toán…</h3><div class="scenario-metrics"><div><span>Khoảng độ sâu mô phỏng</span><strong id="scenario-depth">—</strong></div><div><span>Điểm nguy cơ cao / tổng</span><strong id="scenario-count">—</strong></div></div><div id="risk-distribution" class="risk-distribution"></div><div id="risk-distribution-labels" class="distribution-labels"></div><p class="result-note">Kết quả minh họa mức nhạy cảm của công thức với lượng mưa. Chưa có độ tin cậy đã kiểm định hoặc thời điểm ngập thực tế.</p><a class="text-button" href="#gis-map-section">Xem các điểm trên bản đồ ↗</a></div>
@@ -192,58 +247,15 @@
         </div></details>
       </section>
 
-      <!-- ROUTE FINDER SECTION -->
-      <section id="route-finder-section" class="section-block card" aria-labelledby="rf-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">03.5 / TÌM ĐƯỜNG TRÁNH NGẬP</p><h2 id="rf-title">🗺️ Tìm tuyến đường an toàn</h2></div>
-          <span class="badge light"><i class="hud-dot"></i> AI ĐIỀU HƯỚNG</span>
-        </div>
-        <p class="muted">Nhập điểm xuất phát và điểm đến — hệ thống sẽ kiểm tra xem lộ trình có đi qua khu vực ngập không và đề xuất tuyến an toàn.</p>
-        <div class="route-finder-inputs">
-          <div class="rf-input-group">
-            <label class="field-label" for="rf-from">📍 Điểm xuất phát</label>
-            <input id="rf-from" type="text" class="rf-input" placeholder="VD: Nguyễn Trãi, Mộ Lao, Ba La…" autocomplete="off" list="rf-from-list">
-            <datalist id="rf-from-list"></datalist>
-          </div>
-          <div class="rf-arrow">→</div>
-          <div class="rf-input-group">
-            <label class="field-label" for="rf-to">🏁 Điểm đến</label>
-            <input id="rf-to" type="text" class="rf-input" placeholder="VD: Văn Phú, Xa La, Hà Đông…" autocomplete="off" list="rf-to-list">
-            <datalist id="rf-to-list"></datalist>
-          </div>
-          <button id="rf-search-btn" class="button primary rf-search-btn">🔍 Tìm đường</button>
-        </div>
-        <div class="rf-quick-routes">
-          <span class="small-text muted">Tuyến gợi ý nhanh:</span>
-          <button class="rf-quick-btn" data-from="Bệnh viện 103" data-to="KĐT Văn Phú">BV 103 → Văn Phú</button>
-          <button class="rf-quick-btn" data-from="Ngã tư Sở" data-to="Yên Nghĩa">Ngã tư Sở → Yên Nghĩa</button>
-          <button class="rf-quick-btn" data-from="KĐT Dương Nội" data-to="Cầu Trắng">Dương Nội → Cầu Trắng</button>
-          <button class="rf-quick-btn" data-from="KĐT Mộ Lao" data-to="Ba La">Mộ Lao → Ba La</button>
-        </div>
-        <div id="rf-result" class="rf-result" hidden></div>
-        <div id="rf-map-actions" class="button-row" hidden>
-          <button id="rf-show-map" class="button primary small">↗ Hiện tuyến trên bản đồ</button>
-          <button id="rf-clear-map" class="button secondary small">✕ Xóa tuyến</button>
-        </div>
-      </section>
-      <section id="solutions-section" class="section-block card" aria-labelledby="solutions-title">
-        <div class="section-heading"><div><p class="eyebrow">04 / GIẢI PHÁP ỨNG PHÓ</p><h2 id="solutions-title">Giải pháp thích ứng & Giảm thiểu ngập úng</h2></div><span class="badge light"><i class="status-dot"></i> 4 NHÓM HÀNH ĐỘNG</span></div>
-        <p class="muted">Hệ thống giải pháp đồng bộ kết hợp cảnh báo giao thông, vận hành tiêu thoát nước, lực lượng cứu hộ và quy hoạch hạ tầng đô thị bền vững.</p>
-        <div id="solutions-grid" class="solutions-grid"></div>
-      </section>
-      <section id="community-section" class="section-block card" aria-labelledby="community-title">
-        <div class="section-heading"><div><p class="eyebrow">05 / GHI NHẬN TỪ THỰC TẾ</p><h2 id="community-title">Báo cáo ngập từ cộng đồng</h2></div>
-          <button id="open-report" class="button primary report-fab-btn">＋ Báo ngập ngay</button>
-        </div>
-        <p class="muted">Ghi nhận điểm ngập thực tế và chia sẻ với cộng đồng. Báo cáo lưu trên trình duyệt này, chưa gửi tới cơ quan chức năng.</p>
-        <div class="community-toolbar"><label class="search-field"><span>⌕</span><input id="report-search" type="search" placeholder="Tìm báo cáo đã lưu…" aria-label="Tìm báo cáo"></label><div class="button-row"><button id="sample-reports-btn" class="text-button">★ Nạp dữ liệu mẫu</button><button id="import-reports" class="text-button">↑ Nhập bản sao lưu</button><input id="import-reports-file" type="file" accept=".json,application/json" aria-label="Chọn bản sao lưu JSON" hidden><button id="export-reports" class="text-button" disabled>↓ Xuất báo cáo JSON</button></div></div>
-        <div id="community-feed" class="community-feed"></div>
-      </section>
       <section id="sources-section" class="section-block card" aria-labelledby="sources-title">
-        <div class="section-heading"><div><p class="eyebrow">06 / MINH BẠCH DỮ LIỆU</p><h2 id="sources-title">Bạn đang xem những dữ liệu nào?</h2></div><a href="./data/sources.json" download class="text-button">↓ Danh mục nguồn</a></div>
+        <div class="section-heading"><div><p class="eyebrow">NGUỒN DỮ LIỆU</p><h2 id="sources-title">Bạn đang xem những dữ liệu nào?</h2></div><a href="./data/sources.json" download class="text-button">↓ Danh mục nguồn</a></div>
         <div class="source-grid"><article><span class="source-icon">☂</span><h3>Dự báo khí tượng</h3><p>Open-Meteo cung cấp lượng mưa dự báo theo giờ tại một điểm đại diện. Không phải dữ liệu đo trực tiếp tại từng đường phố.</p><span class="source-status">API · Tự cập nhật 15 phút</span></article><article><span class="source-icon">◎</span><h3>Bản đồ & kịch bản</h3><p>Bản đồ nền OpenStreetMap. Các lớp địa điểm, hạ tầng, độ sâu và vùng lan là dữ liệu nghiên cứu, cần xác minh tại thực địa.</p><span class="source-status">Tham chiếu · Chưa kiểm định</span></article><article><span class="source-icon">▤</span><h3>Báo cáo của bạn</h3><p>Ghi nhận do người dùng nhập, lưu cục bộ trên thiết bị. Không tự xác minh, không tự gán vị trí khi chưa chọn tọa độ.</p><span class="source-status">Cục bộ · Chưa xác minh</span></article></div>
         <div class="method-note"><b>Phạm vi nghiên cứu</b><p>Các điểm tham chiếu thuộc khu vực Hà Đông và lân cận; không phải lớp địa giới phường đã xác minh. Chưa tích hợp quan trắc mực nước, mạng cống đo đạc hoặc mô hình AI được kiểm định.</p></div>
       </section>
+
+      
+
+      
       <footer><span><b>HÀ ĐÔNG FLOOD LAB</b> <span class="footer-dot">/</span> Hiểu dữ liệu. Chủ động hơn.</span><span>Công cụ nghiên cứu · UTC+7</span></footer>
     </div>
   </main>

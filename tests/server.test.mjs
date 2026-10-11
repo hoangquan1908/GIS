@@ -8,8 +8,9 @@ test('HTML, modules and data are served correctly',async()=>{
  for(const route of ['/','/app.js','/app-utils.js','/flood-engine.js','/favicon.svg','/data/sites.geojson']){
   const response=await fetch(base+route);assert.equal(response.status,200,route);
  }
- const html=await(await fetch(base)).text();assert.match(html,/Một góc nhìn/);
+ const html=await(await fetch(base)).text();assert.match(html,/Bản đồ cảnh báo ngập Hà Đông/);
  assert.match(html,/report-dialog/);
+ assert.match(html,/weather-now-card/);
  assert.equal((await fetch(base+'/api/health')).status,200);
  assert.equal((await fetch(base+'/api/missing')).status,404);
 });

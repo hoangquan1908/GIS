@@ -1,4 +1,4 @@
-import { loadGisData, loadReports, saveReport, importReports, fetchWeatherDirect, getAiForecast, getTimelineSimulation, getAvoidanceRoutes, getAiRain24hAnalysis, getActionableSolutions, getDepthLabel, ROUTE_PRESETS, RISK_COLORS, RISK_LABELS } from './flood-engine.js';
+import { loadGisData, loadReports, saveReport, importReports, fetchWeatherDirect, getAiForecast, getTimelineSimulation, getAvoidanceRoutes, getAiRain24hAnalysis, getActionableSolutions, getDepthLabel, weatherCondition, ROUTE_PRESETS, RISK_COLORS, RISK_LABELS } from './flood-engine.js';
 import { normalizeSearch, matchLocation, escapeHtml as esc, safePhoto, summarizeRain, scenarioAlert } from './app-utils.js';
 import { futureHours } from './risk.js';
 const $ = id => document.getElementById(id);
@@ -148,12 +148,23 @@ function restore() {
   $('scenario-rain').value=state.rain;$('scenario-rain-value').value=state.rain+' mm/h';$('scenario-horizon').value=state.horizon;$('location-search').value=state.query;
   setPressed('[data-hours]',state.hours,'hours');setPressed('[data-risk]',state.risk,'risk');
 }
-function popup(site) { return '<b>'+esc(site.name)+'</b><br>'+esc(site.street||'')+'<br><b>'+(site.depth_icon||'🌊')+' '+esc(site.depth_label||site.depth_range_text)+'</b><br>Nguy cơ: '+esc(site.risk_label)+'<br><small>Dự báo bắt đầu ngập: '+esc(site.start_time)+' (~'+site.start_offset_min+' ph)</small><br><small>Mô phỏng, chưa được kiểm định.</small>'; }
+function popup(site) {
+  const warn = ['high','very_high'].includes(site.risk_level);
+  const note = site.note ? '<br><em class="popup-note">📌 '+esc(site.note)+'</em>' : '';
+  const solution = site.solution ? '<br><small>💡 '+esc(site.solution)+'</small>' : '';
+  return '<b>'+esc(site.name)+'</b><br>'+esc(site.street||'')+'<br><b>'+(site.depth_icon||'🌊')+' '+esc(site.depth_label||site.depth_range_text)+'</b><br>Nguy cơ: '+esc(site.risk_label)+(warn?' · <span style="color:#b91c1c">CẢNH BÁO</span>':'')+'<br><small>Dự báo bắt đầu ngập: '+esc(site.start_time)+' (~'+site.start_offset_min+' ph)</small>'+note+solution+'<br><small>Mô phỏng, chưa được kiểm định.</small>';
+}
+function markerLabel(site) {
+  const warn = ['high','very_high'].includes(site.risk_level);
+  if (!warn) return esc(site.name);
+  const shortNote = (site.note || site.depth_label || 'Cảnh báo ngập').slice(0, 72);
+  return '<div class="flood-label"><b>'+(site.depth_icon||'⚠️')+' '+esc(site.name)+'</b><span>'+esc(shortNote)+(site.note && site.note.length > 72 ? '…' : '')+'</span></div>';
+}
 function scrollMap(){ $('gis-map-section').scrollIntoView({behavior:'smooth'}); }
 function focusSite(site, pan=true) {
   state.selected=site.id;
   const detail=$('location-detail');detail.hidden=false;
-  detail.innerHTML='<div><span class="mini-tag">Kịch bản '+state.rain+' mm/h</span><h3>'+esc(site.name)+'</h3><p>'+esc(site.street||'')+' · '+esc(site.ward||'')+'</p></div><div class="detail-depth">'+(site.depth_icon||'🌊')+' '+esc(site.depth_label)+' · '+esc(site.depth_range_text)+'<small>Bắt đầu ngập khoảng '+esc(site.start_time)+' · Mô phỏng chưa kiểm định</small></div>';
+  detail.innerHTML='<div><span class="mini-tag">Kịch bản '+state.rain+' mm/h</span><h3>'+esc(site.name)+'</h3><p>'+esc(site.street||'')+' · '+esc(site.ward||'')+'</p>'+(site.note?'<p class="detail-note">📌 '+esc(site.note)+'</p>':'')+(site.solution?'<p class="detail-solution">💡 '+esc(site.solution)+'</p>':'')+'</div><div class="detail-depth">'+(site.depth_icon||'🌊')+' '+esc(site.depth_label)+' · '+esc(site.depth_range_text)+'<small>Bắt đầu ngập khoảng '+esc(site.start_time)+' · Mô phỏng chưa kiểm định</small></div>';
   document.querySelectorAll('.location-item').forEach(btn=>btn.classList.toggle('selected',btn.dataset.id===site.id));
   if(map){const [lng,lat]=site.coordinates;if(pan)map.flyTo([lat,lng],15);if(pan||selectedPopup?.isOpen()){selectedPopup ||= L.popup();selectedPopup.setLatLng([lat,lng]).setContent(popup(site)).openOn(map);}}
   else if(pan)notify('Bản đồ chưa khả dụng. Bạn vẫn có thể xem thông tin địa điểm.');
@@ -183,7 +194,14 @@ function renderLocations() {
         fillColor:RISK_COLORS[site.risk_level],
         fillOpacity:.95,
         className: isDangerous ? 'pulsing-beacon' : ''
-      }).bindPopup(popup(site)).bindTooltip(esc(site.name)).on('click',()=>focusSite(site)).addTo(layers.sites);
+      }).bindPopup(popup(site)).bindTooltip(markerLabel(site),{
+        permanent: isDangerous,
+        direction: 'top',
+        offset: [0, -8],
+        opacity: 0.96,
+        className: isDangerous ? 'flood-warn-tooltip' : 'site-name-tooltip',
+        sticky: !isDangerous
+      }).on('click',()=>focusSite(site)).addTo(layers.sites);
       if(isDangerous) {
         L.circle([lat,lng],{
           radius: site.risk_level==='very_high'?180:100,
@@ -280,11 +298,40 @@ async function applyAutomaticRain() {
   return true;
 }
 function currentRows(){return state.weather?futureHours(state.weather).slice(0,state.hours):[];}
+function hourlyMeta(time) {
+  const h = state.weather?.hourly;
+  if (!h?.time) return { temp: null, prob: null, code: null };
+  const i = h.time.indexOf(time);
+  if (i < 0) return { temp: null, prob: null, code: null };
+  const num = (arr) => typeof arr?.[i] === 'number' && Number.isFinite(arr[i]) ? arr[i] : null;
+  return { temp: num(h.temperature_2m), prob: num(h.precipitation_probability), code: num(h.weathercode) };
+}
+function renderWeatherNow() {
+  const set = (id, text) => { if ($(id)) $(id).textContent = text; };
+  if (!state.weather?.hourly?.time?.length) {
+    set('wn-condition', '—'); set('wn-temp', '—'); set('wn-rain-now', '—'); set('wn-prob', '—'); set('wn-trend', '—');
+    return;
+  }
+  const rows = futureHours(state.weather);
+  const first = rows[0];
+  const meta = first ? hourlyMeta(first.time) : { temp: null, prob: null, code: null };
+  const cond = weatherCondition(meta.code);
+  set('wn-condition', cond.icon + ' ' + cond.label);
+  set('wn-temp', meta.temp === null ? '—' : meta.temp.toFixed(1) + ' °C');
+  set('wn-rain-now', first?.rain === null || first?.rain === undefined ? '—' : String(first.rain));
+  set('wn-prob', meta.prob === null ? '—' : meta.prob + '%');
+  const next6 = rows.slice(0, 6);
+  const rain6 = next6.reduce((s, r) => s + (typeof r.rain === 'number' ? r.rain : 0), 0);
+  const rainyHours = next6.filter(r => typeof r.rain === 'number' && r.rain > 0).length;
+  set('wn-trend', rainyHours === 0 ? '☀️ Ít mưa' : rain6 >= 10 ? '🌧️ Mưa nhiều' : '🌦️ Có mưa');
+  set('wn-trend-note', rain6.toFixed(1) + ' mm / 6 giờ tới');
+}
 function renderWeather() {
   const rows=currentRows(), summary=summarizeRain(rows), all=state.weather?futureHours(state.weather):[], next24=all.slice(0,24), total24=summarizeRain(next24);
   $('export-csv').disabled=!rows.length;$('export-json').disabled=!rows.length;$('use-weather-btn').disabled=!summary.peak||state.weatherFailed;
   $('kpi-rain').innerHTML=(next24.length===24&&total24.complete?total24.total.toFixed(1):'—')+' <small>mm</small>';
   $('kpi-rain-note').textContent=state.weatherFailed?(all.length?'Bản dự báo cũ · Cập nhật thất bại':'Chưa kết nối được dữ liệu'):next24.length===24&&total24.complete?'Dự báo Open-Meteo · 24 giờ tới':'Thiếu dữ liệu cho đủ 24 giờ';
+  renderWeatherNow();
   if(!rows.length){
     $('rain-chart').innerHTML=empty('Chưa có dữ liệu dự báo',state.weather?'Bản dự báo không còn giờ tương lai. Hãy cập nhật lại.':'Kiểm tra kết nối rồi chọn Thử lại.');
     $('rain-total').innerHTML='— <small>mm tích lũy</small>';$('rain-peak').textContent='Không thay dữ liệu thiếu bằng lượng mưa bằng 0.';$('rain-table-body').replaceChildren();$('rain-chart').setAttribute('aria-label','Chưa có dữ liệu lượng mưa');return;
@@ -301,7 +348,11 @@ function renderWeather() {
     col.innerHTML='<span class="chart-value">'+(row.rain===null?'—':row.rain>0?row.rain:'')+'</span><div class="chart-bar '+(row===summary.peak?'peak':'')+'" style="height:'+(row.rain===null?12:Math.max(2,row.rain/max*138))+'px"></div><span class="chart-time">'+(state.hours<=12||index%3===0?esc(row.time.slice(11,16)):'')+'</span>';
     chart.append(col);
   });
-  $('rain-table-body').innerHTML=rows.map(row=>'<tr><td>'+esc(row.time.replace('T',' '))+'</td><td>'+(row.rain===null?'Thiếu dữ liệu':row.rain)+'</td></tr>').join('');
+  $('rain-table-body').innerHTML=rows.map(row=>{
+    const meta = hourlyMeta(row.time);
+    const cond = weatherCondition(meta.code);
+    return '<tr><td>'+esc(row.time.replace('T',' '))+'</td><td>'+cond.icon+' '+esc(cond.label)+'</td><td>'+(meta.temp===null?'—':meta.temp.toFixed(1)+' °C')+'</td><td>'+(row.rain===null?'Thiếu dữ liệu':row.rain)+'</td><td>'+(meta.prob===null?'—':meta.prob+'%')+'</td></tr>';
+  }).join('');
   renderAi24hRain();
 }
 function renderAi24hRain() {
@@ -351,7 +402,7 @@ function renderSolutions() {
   if (!grid) return;
   const solutions = getActionableSolutions(state.rain);
   grid.innerHTML = solutions.map(s => `
-    <article class="solution-card">
+    <article class="solution-card audience-${esc(s.audience || 'general')}">
       <div class="solution-header">
         <div class="solution-title-group">
           <span class="solution-icon">${s.icon}</span>
@@ -359,6 +410,7 @@ function renderSolutions() {
         </div>
         <span class="solution-priority-pill" style="background:${s.color}">${esc(s.priority)}</span>
       </div>
+      ${s.summary ? `<p class="solution-summary">${esc(s.summary)}</p>` : ''}
       <ul class="solution-actions-list">
         ${s.actions.map(a => `<li>${esc(a)}</li>`).join('')}
       </ul>

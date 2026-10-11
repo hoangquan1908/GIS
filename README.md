@@ -16,11 +16,15 @@ Truy cập **http://localhost:3000**; dừng bằng Ctrl+C. Máy chủ mặc đ�
 
 ## Giao diện và cách sử dụng
 
-- **Tổng quan:** thanh điều hướng, chỉ số nhanh, trạng thái dữ liệu và nút cập nhật; bố cục tự thích ứng trên điện thoại.
-- **Bản đồ:** bật/tắt lớp địa điểm, sông hồ, đường, hạ tầng và báo cáo; tìm địa điểm có hoặc không dấu, lọc nguy cơ, xem chi tiết và định vị thiết bị khi được cấp quyền.
-- **Dự báo mưa:** chọn 6/12/24/48/72 giờ, xem biểu đồ và bảng, tổng mưa và giờ mưa lớn nhất; xuất CSV/JSON hoặc in/lưu PDF qua trình duyệt.
-- **Kịch bản:** điều chỉnh cường độ mưa và mốc 30 phút–24 giờ; có thể nạp giờ mưa dự báo lớn nhất, xem diễn biến giả định và hai tuyến đường mẫu.
-- **Chia sẻ bộ lọc:** sao chép liên kết lưu các tham số `rain`, `horizon`, `hours`, `q`, `risk`. Mở lại liên kết sẽ khôi phục thiết lập; báo cáo cá nhân và ảnh không nằm trong liên kết.
+Năm mục chính (thứ tự trên trang):
+
+1. **Bản đồ khu vực:** điểm nóng Hà Đông; điểm nguy cơ cao/rất cao hiện ghi chú cảnh báo ngay trên chấm tròn; bật/tắt lớp, tìm kiếm, lọc nguy cơ.
+2. **Dự báo khí tượng:** nắng/mưa theo mã thời tiết, nhiệt độ, lượng mưa và xác suất; chọn 6/12/24/48/72 giờ; xuất CSV/JSON.
+3. **Tuyến tránh ngập:** cảnh báo đoạn đường ngập và đề xuất tuyến an toàn hơn.
+4. **Báo cáo cộng đồng:** người dân ghi nhận nơi ngập và mức độ (lưu trên trình duyệt).
+5. **Giải pháp ứng phó:** cảnh báo cơ quan chức năng · cảnh báo người dân · vận hành tiêu thoát nước.
+
+Phụ lục: kịch bản mưa 30 phút–24 giờ, diễn biến giả định, và trang nguồn dữ liệu. Chia sẻ bộ lọc qua liên kết (`rain`, `horizon`, `hours`, `q`, `risk`).
 
 Dự báo lấy dữ liệu thật từ Open-Meteo tại điểm đại diện **20.9708, 105.7788**, hiển thị theo UTC+7 và tự cập nhật mỗi **15 phút khi tab đang hiển thị**. Có cache và giới hạn thời gian chờ. Khi thiếu dữ liệu hoặc mất kết nối, giao diện báo lỗi/thiếu dữ liệu, không tự tạo thời tiết và không biến lượng mưa thiếu thành 0. Dữ liệu giả lập chỉ được dùng riêng trong kiểm thử.
 
