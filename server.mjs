@@ -81,10 +81,20 @@ const server=http.createServer(async(req,res)=>{
     try{name=decodeURIComponent(url.pathname);}catch{return sendJson({error:'Đường dẫn không hợp lệ.'},400);}
     if(name==='/')name='/index.html';
     const data=name.startsWith('/data/'),base=path.join(root,data?'data':'public');
-    const target=path.resolve(base,'.'+(data?name.slice(5):name));
-    if(!target.startsWith(base+path.sep))return sendJson({error:'Không được truy cập.'},403);
-    const content=await readFile(target);
-    res.writeHead(200,{'Content-Type':types[path.extname(target)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Cache-Control':'no-cache'});
+    let target=path.resolve(base,'.'+(data?name.slice(5):name));
+    let content;
+    try {
+      if(!target.startsWith(base+path.sep))return sendJson({error:'Không được truy cập.'},403);
+      content=await readFile(target);
+    } catch {
+      const altBase=data?path.join(root,'public','data'):root;
+      const altTarget=path.resolve(altBase,'.'+(data?name.slice(5):name));
+      if(altTarget.startsWith(altBase+path.sep)){
+        try{content=await readFile(altTarget);}
+        catch{return sendJson({error:'Không tìm thấy tài nguyên.'},404);}
+      }else{return sendJson({error:'Không tìm thấy tài nguyên.'},404);}
+    }
+    res.writeHead(200,{'Content-Type':types[path.extname(name)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Cache-Control':'no-cache'});
     res.end(req.method==='HEAD'?undefined:content);
   }catch(error){
     if(res.headersSent){res.end();return;}

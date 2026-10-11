@@ -1,0 +1,13 @@
+{
+  "reviewed_on": "2026-09-16",
+  "study_area": "Phường Hà Đông, Hà Nội; không đồng nhất với toàn bộ quận Hà Đông cũ",
+  "sources": [
+    {"name":"Giới thiệu phường Hà Đông", "url":"https://hadong.hanoi.gov.vn/gioi-thieu-chung/phuong-ha-dong-thanh-pho-ha-noi-2809250628231108461.htm", "usage":"Bối cảnh địa bàn; không có polygon địa giới đã xác minh trong ứng dụng"},
+    {"name":"Ghi nhận di tản do ngập ven sông Nhuệ", "url":"https://hadong.hanoi.gov.vn/van-hoa-xa-hoi/ha-noi-kip-thoi-di-tan-nguoi-dan-ven-song-nhue-khac-phuc-ngap-ung-sau-bao-so-10-2809251007162437752.htm", "usage":"Bằng chứng định tính ở Phúc La, Quang Trung, Mộ Lao; không đủ để gán nhãn ngập theo giờ hoặc tọa độ"},
+    {"name":"Open-Meteo Forecast", "url":"https://open-meteo.com/en/docs", "usage":"Dự báo mưa theo giờ tại 20.9708, 105.7788; một điểm đại diện", "license":"Dữ liệu CC BY 4.0; kiểm tra điều khoản API trước khi triển khai thương mại"},
+    {"name":"Open-Meteo Historical Weather / ERA5", "url":"https://open-meteo.com/en/docs/historical-weather-api", "usage":"Chuỗi mưa tái phân tích 2025; không phải số đo trạm, không được coi là dự báo được phát hành trong quá khứ"},
+    {"name":"OpenStreetMap", "url":"https://www.openstreetmap.org/copyright", "usage":"Bản đồ nền; ODbL, tuân thủ chính sách tile https://operations.osmfoundation.org/policies/tiles/"},
+    {"name":"Copernicus DEM qua OpenTopography", "url":"https://opentopography.org/developers", "usage":"Nguồn đề xuất, CHƯA tải hoặc tích hợp. DSM khoảng 30 m không thay thế cao độ mặt đường/cống đo đạc chi tiết"}
+  ],
+  "missing": ["Ranh giới phường chính thức dạng GeoJSON/shapefile", "Quan trắc mưa và mực nước tại địa bàn", "Tọa độ, độ sâu, thời gian ngập và mẫu không ngập", "Mạng cống, cao độ nền, năng lực bơm, mặt phủ", "Bộ dự báo lưu trữ theo thời điểm phát hành để đánh giá cảnh báo sớm"]
+}
