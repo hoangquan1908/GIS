@@ -153,7 +153,7 @@ function scrollMap(){ $('gis-map-section').scrollIntoView({behavior:'smooth'}); 
 function focusSite(site, pan=true) {
   state.selected=site.id;
   const detail=$('location-detail');detail.hidden=false;
-  detail.innerHTML='<div><span class="mini-tag">Kịch bản '+state.rain+' mm/h</span><h3>'+esc(site.name)+'</h3><p>'+esc(site.street||'')+' · '+esc(site.ward||'')+'</p></div><div class="detail-depth">'+(site.depth_icon||'🌊')+' '+esc(site.depth_label||site.depth_range_text)+'<small>Bắt đầu ngập khoảng '+esc(site.start_time)+' · Mô phỏng chưa kiểm định</small></div>';
+  detail.innerHTML='<div><span class="mini-tag">Kịch bản '+state.rain+' mm/h</span><h3>'+esc(site.name)+'</h3><p>'+esc(site.street||'')+' · '+esc(site.ward||'')+'</p></div><div class="detail-depth">'+(site.depth_icon||'🌊')+' '+esc(site.depth_label)+' · '+esc(site.depth_range_text)+'<small>Bắt đầu ngập khoảng '+esc(site.start_time)+' · Mô phỏng chưa kiểm định</small></div>';
   document.querySelectorAll('.location-item').forEach(btn=>btn.classList.toggle('selected',btn.dataset.id===site.id));
   if(map){const [lng,lat]=site.coordinates;if(pan)map.flyTo([lat,lng],15);if(pan||selectedPopup?.isOpen()){selectedPopup ||= L.popup();selectedPopup.setLatLng([lat,lng]).setContent(popup(site)).openOn(map);}}
   else if(pan)notify('Bản đồ chưa khả dụng. Bạn vẫn có thể xem thông tin địa điểm.');
