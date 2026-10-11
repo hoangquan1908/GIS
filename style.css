@@ -15,12 +15,18 @@
 }
 html {
   scroll-behavior:smooth;
-  scroll-padding-top:90px
+  scroll-padding-top:90px;
+  min-height:100%
 }
 body {
   margin:0;
   font-size:14px;
-  line-height:1.6
+  line-height:1.6;
+  min-height:100vh;
+  background:
+    linear-gradient(180deg, rgba(246, 248, 247, 0.72) 0%, rgba(246, 248, 247, 0.82) 45%, rgba(246, 248, 247, 0.88) 100%),
+    url('./background.jpg') center center / cover no-repeat fixed;
+  background-color:#e8efe6
 }
 button,input,select,textarea {
   font:inherit
@@ -361,8 +367,7 @@ main {
   margin-left:234px;
   min-width:0;
   flex:1;
-  background: linear-gradient(180deg, rgba(246, 248, 247, 0.92) 0%, rgba(246, 248, 247, 0.98) 450px, #f6f8f7 100%),
-              url('./background.jpg') top right / 100% auto no-repeat fixed;
+  background:transparent
 }
 .topbar {
   height:70px;
@@ -440,7 +445,8 @@ main {
 .page-heading h1 {
   font-size:30px;
   font-weight:650;
-  letter-spacing:-1.1px
+  letter-spacing:-1.1px;
+  text-shadow:0 1px 0 rgba(255,255,255,.75)
 }
 .page-heading h1>span {
   color:#6a9771
@@ -457,12 +463,12 @@ main {
   position:relative;
   overflow:hidden;
   border-radius:17px;
-  background: linear-gradient(90deg, rgba(233, 240, 228, 0.95) 0%, rgba(233, 240, 228, 0.88) 45%, rgba(233, 240, 228, 0.25) 70%, rgba(255, 255, 255, 0.1) 100%),
-              url('./background.jpg') right center / cover no-repeat;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 55%, rgba(255, 255, 255, 0.35) 100%);
   min-height:257px;
   display:flex;
   border:1px solid #e2ebdb;
   box-shadow: 0 4px 16px rgba(18, 62, 53, 0.08);
+  backdrop-filter: blur(2px)
 }
 .banner-copy {
   width:62%;
@@ -744,7 +750,8 @@ main {
 }
 .section-heading h2 {
   font-size:21px;
-  font-weight:600
+  font-weight:600;
+  text-shadow:0 1px 0 rgba(255,255,255,.7)
 }
 .count-badge {
   font-size:10px;
@@ -2234,7 +2241,8 @@ dialog input,dialog textarea,dialog select {
 }
 @media print {
   body {
-    background:white;
+    background:#fff!important;
+    background-image:none!important;
     color:black
   }
   .sidebar,.topbar,.button,.text-button,.toast,.nav-scrim,dialog,.simulation-details,.community-toolbar,footer,.contour-art {
