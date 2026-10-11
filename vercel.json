@@ -1,7 +1,14 @@
 {
   "version": 2,
+  "services": {
+    "app": {
+      "root": ".",
+      "entrypoint": "server.mjs",
+      "buildCommand": "node scripts/sync-static.mjs"
+    }
+  },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index.mjs" }
+    { "source": "/(.*)", "destination": { "service": "app" } }
   ],
   "headers": [
     {
