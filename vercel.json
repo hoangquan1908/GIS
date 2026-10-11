@@ -1,35 +1,10 @@
 {
   "version": 2,
-  "name": "hadong-flood-lab",
-  "buildCommand": "node scripts/sync-static.mjs",
-  "outputDirectory": "public",
-  "functions": {
-    "api/index.mjs": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 30,
-      "includeFiles": "data/**,weather-cache.mjs,flood-engine.mjs,public/app-utils.js"
+  "services": {
+    "app": {
+      "root": ".",
+      "entrypoint": "server.mjs",
+      "buildCommand": "node scripts/sync-static.mjs"
     }
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index.mjs" }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
   }
 }
