@@ -1,5 +1,5 @@
 import { copyFile, mkdir } from 'node:fs/promises';
-const assets=['index.html','style.css','app.js','app-utils.js','flood-engine.js','risk.js','favicon.svg','background.png'];
+const assets=['index.html','style.css','app.js','app-utils.js','flood-engine.js','risk.js','favicon.svg','background.jpg'];
 for(const asset of assets)await copyFile(new URL('../public/'+asset,import.meta.url),new URL('../'+asset,import.meta.url));
 await mkdir(new URL('../public/data',import.meta.url),{recursive:true});
 const dataFiles=['sites.geojson','gis-layers.geojson','community-reports.json','sources.json'];

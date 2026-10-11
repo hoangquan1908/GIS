@@ -362,7 +362,7 @@ main {
   min-width:0;
   flex:1;
   background: linear-gradient(180deg, rgba(246, 248, 247, 0.92) 0%, rgba(246, 248, 247, 0.98) 450px, #f6f8f7 100%),
-              url('./background.png') top right / 100% auto no-repeat fixed;
+              url('./background.jpg') top right / 100% auto no-repeat fixed;
 }
 .topbar {
   height:70px;
@@ -458,7 +458,7 @@ main {
   overflow:hidden;
   border-radius:17px;
   background: linear-gradient(90deg, rgba(233, 240, 228, 0.95) 0%, rgba(233, 240, 228, 0.88) 45%, rgba(233, 240, 228, 0.25) 70%, rgba(255, 255, 255, 0.1) 100%),
-              url('./background.png') right center / cover no-repeat;
+              url('./background.jpg') right center / cover no-repeat;
   min-height:257px;
   display:flex;
   border:1px solid #e2ebdb;

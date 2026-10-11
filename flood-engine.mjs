@@ -64,7 +64,7 @@ export function getDepthLabel(depthCm) {
 
 /**
  * Predict flood depth, start time, and risk level based on horizon and rain.
- * Horizon: '+30m', '+1h', '+2h', '+3h'
+ * Horizon: '+30m', '+1h', '+2h', '+3h', '+6h', '+12h', '+24h'
  */
 export function getAiForecast(horizon = '+1h', currentRainRate = 35) {
   const { sites } = loadGisData();
@@ -74,7 +74,10 @@ export function getAiForecast(horizon = '+1h', currentRainRate = 35) {
     '+30m': { rainFactor: 0.85, conf: 91, timeOffset: 30, depthFactor: 0.9 },
     '+1h': { rainFactor: 1.0, conf: 86, timeOffset: 60, depthFactor: 1.1 },
     '+2h': { rainFactor: 1.25, conf: 82, timeOffset: 120, depthFactor: 1.35 },
-    '+3h': { rainFactor: 1.15, conf: 78, timeOffset: 180, depthFactor: 1.2 }
+    '+3h': { rainFactor: 1.15, conf: 78, timeOffset: 180, depthFactor: 1.2 },
+    '+6h': { rainFactor: 1.3, conf: 70, timeOffset: 360, depthFactor: 1.4 },
+    '+12h': { rainFactor: 1.4, conf: 62, timeOffset: 720, depthFactor: 1.5 },
+    '+24h': { rainFactor: 1.5, conf: 55, timeOffset: 1440, depthFactor: 1.55 }
   }[hKey] || { rainFactor: 1.0, conf: 82, timeOffset: 60, depthFactor: 1.0 };
 
   const now = new Date();

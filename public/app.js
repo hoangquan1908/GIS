@@ -141,8 +141,8 @@ function restore() {
   if(p.has('rain')&&p.get('rain').trim()!==''&&Number.isFinite(rain)&&rain>=0&&rain<=100){state.rain=rain;state.aiAuto=false;}
   if(['0','1'].includes(p.get('auto')))state.aiAuto=p.get('auto')==='1';
   renderAutoMode();
-  if(['+30m','+1h','+2h','+3h'].includes(p.get('horizon')))state.horizon=p.get('horizon');
-  if([6,12,24].includes(Number(p.get('hours'))))state.hours=Number(p.get('hours'));
+  if(['+30m','+1h','+2h','+3h','+6h','+12h','+24h'].includes(p.get('horizon')))state.horizon=p.get('horizon');
+  if([6,12,24,48,72].includes(Number(p.get('hours'))))state.hours=Number(p.get('hours'));
   if(p.get('risk')==='high')state.risk='high';
   state.query=(p.get('q')||'').slice(0,160);
   $('scenario-rain').value=state.rain;$('scenario-rain-value').value=state.rain+' mm/h';$('scenario-horizon').value=state.horizon;$('location-search').value=state.query;
@@ -281,10 +281,10 @@ async function applyAutomaticRain() {
 }
 function currentRows(){return state.weather?futureHours(state.weather).slice(0,state.hours):[];}
 function renderWeather() {
-  const rows=currentRows(), summary=summarizeRain(rows), all=state.weather?futureHours(state.weather):[], total24=summarizeRain(all);
+  const rows=currentRows(), summary=summarizeRain(rows), all=state.weather?futureHours(state.weather):[], next24=all.slice(0,24), total24=summarizeRain(next24);
   $('export-csv').disabled=!rows.length;$('export-json').disabled=!rows.length;$('use-weather-btn').disabled=!summary.peak||state.weatherFailed;
-  $('kpi-rain').innerHTML=(all.length===24&&total24.complete?total24.total.toFixed(1):'—')+' <small>mm</small>';
-  $('kpi-rain-note').textContent=state.weatherFailed?(all.length?'Bản dự báo cũ · Cập nhật thất bại':'Chưa kết nối được dữ liệu'):all.length===24&&total24.complete?'Dự báo Open-Meteo · 24 giờ tới':'Thiếu dữ liệu cho đủ 24 giờ';
+  $('kpi-rain').innerHTML=(next24.length===24&&total24.complete?total24.total.toFixed(1):'—')+' <small>mm</small>';
+  $('kpi-rain-note').textContent=state.weatherFailed?(all.length?'Bản dự báo cũ · Cập nhật thất bại':'Chưa kết nối được dữ liệu'):next24.length===24&&total24.complete?'Dự báo Open-Meteo · 24 giờ tới':'Thiếu dữ liệu cho đủ 24 giờ';
   if(!rows.length){
     $('rain-chart').innerHTML=empty('Chưa có dữ liệu dự báo',state.weather?'Bản dự báo không còn giờ tương lai. Hãy cập nhật lại.':'Kiểm tra kết nối rồi chọn Thử lại.');
     $('rain-total').innerHTML='— <small>mm tích lũy</small>';$('rain-peak').textContent='Không thay dữ liệu thiếu bằng lượng mưa bằng 0.';$('rain-table-body').replaceChildren();$('rain-chart').setAttribute('aria-label','Chưa có dữ liệu lượng mưa');return;

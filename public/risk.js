@@ -12,5 +12,5 @@ export function windowRain(values,index,length=3) {
 export function futureHours(data,now=Date.now()) {
   const h=data?.hourly;
   if(!Array.isArray(h?.time)||!Array.isArray(h?.precipitation)) throw new Error('Dữ liệu mưa không hợp lệ');
-  return h.time.map((t,i)=>({time:t,rain:typeof h.precipitation[i]==="number"&&Number.isFinite(h.precipitation[i])&&h.precipitation[i]>=0?h.precipitation[i]:null,rain3h:windowRain(h.precipitation,i)})).filter(x=>new Date(x.time+'+07:00').getTime()>=now).slice(0,24);
+  return h.time.map((t,i)=>({time:t,rain:typeof h.precipitation[i]==="number"&&Number.isFinite(h.precipitation[i])&&h.precipitation[i]>=0?h.precipitation[i]:null,rain3h:windowRain(h.precipitation,i)})).filter(x=>new Date(x.time+'+07:00').getTime()>=now).slice(0,72);
 }

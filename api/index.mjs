@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
       case '/ai-forecast': {
         const horizon = params.get('horizon') || '+1h';
-        if (!['+30m', '+1h', '+2h', '+3h'].includes(horizon)) {
+        if (!['+30m', '+1h', '+2h', '+3h', '+6h', '+12h', '+24h'].includes(horizon)) {
           return sendJson(res, { error: 'Khoảng mô phỏng không hợp lệ.' }, 400);
         }
         const forecast = getAiForecast(horizon, rain);
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
           return sendJson(res, { error: 'Nhập tên địa điểm từ 2 đến 160 ký tự.' }, 400);
         }
         const horizon = params.get('horizon') || '+1h';
-        if (!['+30m', '+1h', '+2h', '+3h'].includes(horizon)) {
+        if (!['+30m', '+1h', '+2h', '+3h', '+6h', '+12h', '+24h'].includes(horizon)) {
           return sendJson(res, { error: 'Khoảng mô phỏng không hợp lệ.' }, 400);
         }
         const result = searchLocationRisk(q, rain, horizon);

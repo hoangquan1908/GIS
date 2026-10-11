@@ -31,10 +31,11 @@ test('loadGisData loads valid GeoJSON sites and layers', () => {
 });
 
 test('getAiForecast calculates realistic predictions and confidence', () => {
-  const horizons = ['+30m', '+1h', '+2h', '+3h'];
+  const horizons = ['+30m', '+1h', '+2h', '+3h', '+6h', '+12h', '+24h'];
   for (const h of horizons) {
     const forecast = getAiForecast(h, 40);
-    assert.ok(forecast.average_confidence_pct >= 70 && forecast.average_confidence_pct <= 95);
+    const minConf = ['+12h', '+24h'].includes(h) ? 50 : h === '+6h' ? 65 : 70;
+    assert.ok(forecast.average_confidence_pct >= minConf && forecast.average_confidence_pct <= 95);
     assert.ok(forecast.predictions.length > 0);
     assert.ok(forecast.top_hotspot.name);
     assert.ok(forecast.top_hotspot.depth_range_text.includes('cm'));

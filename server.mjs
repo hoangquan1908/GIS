@@ -31,7 +31,7 @@ const server=http.createServer(async(req,res)=>{
         case '/api/flood-data':return sendJson({...loadGisData(),data_mode:'reference'});
         case '/api/ai-forecast':{
           const horizon=url.searchParams.get('horizon')||'+1h';
-          if(!['+30m','+1h','+2h','+3h'].includes(horizon))return sendJson({error:'Khoảng mô phỏng không hợp lệ.'},400);
+          if(!['+30m','+1h','+2h','+3h','+6h','+12h','+24h'].includes(horizon))return sendJson({error:'Khoảng mô phỏng không hợp lệ.'},400);
           const forecast=getAiForecast(horizon,rain);
           forecast.average_confidence_pct=null;
           forecast.top_hotspot.confidence_pct=null;
@@ -45,7 +45,7 @@ const server=http.createServer(async(req,res)=>{
           const q=(url.searchParams.get('q')||'').trim();
           if(q.length<2||q.length>160)return sendJson({error:'Nhập tên địa điểm từ 2 đến 160 ký tự.'},400);
           const horizon=url.searchParams.get('horizon')||'+1h';
-          if(!['+30m','+1h','+2h','+3h'].includes(horizon))return sendJson({error:'Khoảng mô phỏng không hợp lệ.'},400);
+          if(!['+30m','+1h','+2h','+3h','+6h','+12h','+24h'].includes(horizon))return sendJson({error:'Khoảng mô phỏng không hợp lệ.'},400);
           const result=searchLocationRisk(q,rain,horizon);
           if(!result)return sendJson({error:'Không tìm thấy địa điểm.'},404);
           return sendJson(simulated({...result,confidence_pct:null}));

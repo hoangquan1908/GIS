@@ -18,8 +18,8 @@ Truy cập **http://localhost:3000**; dừng bằng Ctrl+C. Máy chủ mặc đ�
 
 - **Tổng quan:** thanh điều hướng, chỉ số nhanh, trạng thái dữ liệu và nút cập nhật; bố cục tự thích ứng trên điện thoại.
 - **Bản đồ:** bật/tắt lớp địa điểm, sông hồ, đường, hạ tầng và báo cáo; tìm địa điểm có hoặc không dấu, lọc nguy cơ, xem chi tiết và định vị thiết bị khi được cấp quyền.
-- **Dự báo mưa:** chọn 6/12/24 giờ, xem biểu đồ và bảng, tổng mưa và giờ mưa lớn nhất; xuất CSV/JSON hoặc in/lưu PDF qua trình duyệt.
-- **Kịch bản:** điều chỉnh cường độ mưa và mốc 30 phút–3 giờ; có thể nạp giờ mưa dự báo lớn nhất, xem diễn biến giả định và hai tuyến đường mẫu.
+- **Dự báo mưa:** chọn 6/12/24/48/72 giờ, xem biểu đồ và bảng, tổng mưa và giờ mưa lớn nhất; xuất CSV/JSON hoặc in/lưu PDF qua trình duyệt.
+- **Kịch bản:** điều chỉnh cường độ mưa và mốc 30 phút–24 giờ; có thể nạp giờ mưa dự báo lớn nhất, xem diễn biến giả định và hai tuyến đường mẫu.
 - **Chia sẻ bộ lọc:** sao chép liên kết lưu các tham số `rain`, `horizon`, `hours`, `q`, `risk`. Mở lại liên kết sẽ khôi phục thiết lập; báo cáo cá nhân và ảnh không nằm trong liên kết.
 
 Dự báo lấy dữ liệu thật từ Open-Meteo tại điểm đại diện **20.9708, 105.7788**, hiển thị theo UTC+7 và tự cập nhật mỗi **15 phút khi tab đang hiển thị**. Có cache và giới hạn thời gian chờ. Khi thiếu dữ liệu hoặc mất kết nối, giao diện báo lỗi/thiếu dữ liệu, không tự tạo thời tiết và không biến lượng mưa thiếu thành 0. Dữ liệu giả lập chỉ được dùng riêng trong kiểm thử.
