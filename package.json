@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node scripts/sync-static.mjs",
+    "prestart": "node scripts/sync-static.mjs",
     "start": "node server.mjs",
+    "pretest": "node scripts/sync-static.mjs",
     "test": "node --test tests/*.test.mjs",
     "data": "node scripts/download-data.mjs",
     "sync:static": "node scripts/sync-static.mjs",

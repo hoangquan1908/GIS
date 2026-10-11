@@ -23,11 +23,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run verification tests
+        run: npm test
+
       - name: Build site structure
         run: |
           mkdir -p _site
           cp -r public/* _site/
           cp -r data _site/
+          cp .nojekyll _site/ 2>/dev/null || touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

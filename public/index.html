@@ -65,6 +65,11 @@
               <label class="layer-chip"><input type="checkbox" data-layer="infrastructure"> Hạ tầng</label>
               <label class="layer-chip"><input type="checkbox" data-layer="community" checked> Báo cáo</label>
               <label class="layer-chip"><input type="checkbox" data-layer="rain" checked> 🌧️ Kịch bản mưa</label>
+              <select id="basemap-select" class="basemap-select" aria-label="Loại bản đồ nền" title="Đổi bản đồ nền">
+                <option value="osm" selected>🗺️ Bản đồ chuẩn</option>
+                <option value="satellite">🛰️ Bản đồ vệ tinh</option>
+                <option value="carto">🏙️ Đô thị tối giản</option>
+              </select>
               <button id="ai-auto-toggle" class="button secondary small auto-live-btn active" type="button" aria-pressed="true">↻ Mưa: Theo dự báo</button>
               <button id="alert-sound-toggle" aria-pressed="false" class="button secondary small sound-btn" type="button" title="Bật/Tắt âm cảnh báo">🔔 Bật âm</button>
             </div>
@@ -170,7 +175,7 @@
       <section id="community-section" class="section-block card" aria-labelledby="community-title">
         <div class="section-heading"><div><p class="eyebrow">05 / GHI NHẬN TỪ THỰC TẾ</p><h2 id="community-title">Nhật ký báo ngập của bạn</h2></div><button id="open-report" class="button primary">＋ Tạo báo cáo</button></div>
         <p class="muted">Lưu trên trình duyệt này, chưa gửi tới cộng đồng hoặc cơ quan chức năng. Báo cáo mới luôn ở trạng thái chưa xác minh.</p>
-        <div class="community-toolbar"><label class="search-field"><span>⌕</span><input id="report-search" type="search" placeholder="Tìm báo cáo đã lưu…" aria-label="Tìm báo cáo"></label><div class="button-row"><button id="import-reports" class="text-button">↑ Nhập bản sao lưu</button><input id="import-reports-file" type="file" accept=".json,application/json" aria-label="Chọn bản sao lưu JSON" hidden><button id="export-reports" class="text-button" disabled>↓ Xuất báo cáo JSON</button></div></div>
+        <div class="community-toolbar"><label class="search-field"><span>⌕</span><input id="report-search" type="search" placeholder="Tìm báo cáo đã lưu…" aria-label="Tìm báo cáo"></label><div class="button-row"><button id="sample-reports-btn" class="text-button">★ Nạp dữ liệu mẫu</button><button id="import-reports" class="text-button">↑ Nhập bản sao lưu</button><input id="import-reports-file" type="file" accept=".json,application/json" aria-label="Chọn bản sao lưu JSON" hidden><button id="export-reports" class="text-button" disabled>↓ Xuất báo cáo JSON</button></div></div>
         <div id="community-feed" class="community-feed"></div>
       </section>
       <section id="sources-section" class="section-block card" aria-labelledby="sources-title">

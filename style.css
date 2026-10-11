@@ -803,6 +803,20 @@ main {
   height:11px;
   margin:0 3px 0 0
 }
+.basemap-select {
+  font-size:11px;
+  padding:5px 8px!important;
+  border-radius:6px!important;
+  border:1px solid #dce5df!important;
+  background:#fff;
+  color:#3d554b;
+  cursor:pointer;
+  height:32px;
+  width:auto!important;
+}
+.basemap-select:focus {
+  outline:2px solid var(--green);
+}
 .map-stage {
   position:relative
 }

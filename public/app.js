@@ -162,11 +162,24 @@ function renderLocations() {
     });
   }
 }
+let baseTileLayer = null;
+const baseTileConfigs = {
+  osm: { url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', opts: { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' } },
+  satellite: { url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', opts: { maxZoom: 19, attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' } },
+  carto: { url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', opts: { maxZoom: 19, subdomains: 'abcd', attribution: '&copy; <a href="https://carto.com/">CARTO</a>' } }
+};
+function switchBaseMap(type) {
+  if (!map || !baseTileConfigs[type]) return;
+  if (baseTileLayer) map.removeLayer(baseTileLayer);
+  const cfg = baseTileConfigs[type];
+  baseTileLayer = L.tileLayer(cfg.url, cfg.opts).addTo(map);
+  baseTileLayer.bringToBack();
+  baseTileLayer.on('tileerror', () => { $('map-status').textContent = 'Không tải được một số ô bản đồ nền. Kiểm tra kết nối mạng.'; });
+}
 function initMap(data) {
   if(!window.L){$('map').innerHTML=empty('Chưa tải được bản đồ','Kiểm tra mạng và tải lại trang. Các chức năng khác vẫn dùng được.');$('map-status').textContent='Bản đồ chưa khả dụng';return;}
   map=L.map('map',{center:[20.972,105.776],zoom:13,zoomControl:true});
-  const tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
-  tiles.on('tileerror',()=>{$('map-status').textContent='Không tải được một số ô bản đồ nền. Kiểm tra kết nối mạng.';});
+  switchBaseMap('osm');
   for(const name of ['sites','water','roads','infrastructure','community','timeline','routing','rain'])layers[name]=L.layerGroup();
   for(const name of ['sites','water','community','timeline','routing','rain'])layers[name].addTo(map);
   data.layers.features.forEach(feature=>{
@@ -601,6 +614,7 @@ function setupEvents(){
   document.querySelectorAll('[data-risk]').forEach(btn=>btn.onclick=()=>{state.risk=btn.dataset.risk;setPressed('[data-risk]',state.risk,'risk');renderLocations();persist();});
   document.querySelectorAll('[data-hours]').forEach(btn=>btn.onclick=()=>{state.hours=Number(btn.dataset.hours);setPressed('[data-hours]',state.hours,'hours');renderWeather();persist();});
   document.querySelectorAll('[data-layer]').forEach(input=>input.onchange=()=>{const layer=layers[input.dataset.layer];if(!map||!layer)return;if(input.checked)layer.addTo(map);else map.removeLayer(layer);});
+  if($('basemap-select'))$('basemap-select').onchange=e=>switchBaseMap(e.target.value);
   $('scenario-rain').oninput=e=>{
     state.rain=Number(e.target.value);
     state.aiAuto=false;
@@ -643,6 +657,19 @@ function setupEvents(){
   $('print-btn').onclick=()=>window.print();
   $('report-search').oninput=renderReports;
   $('import-reports').onclick=()=>$('import-reports-file').click();
+  if($('sample-reports-btn')){
+    $('sample-reports-btn').onclick=async()=>{
+      $('sample-reports-btn').disabled=true;
+      try{
+        const res=await fetch(new URL('./data/community-reports.json',import.meta.url));
+        if(!res.ok)throw new Error('Không tải được tệp dữ liệu mẫu.');
+        const sampleReports=await res.json();
+        const count=await importReports({reports:sampleReports});
+        await loadCommunity();
+        notify(count?'Đã nạp '+count+' báo cáo khảo sát thực tế tại Hà Đông.':'Tất cả báo cáo mẫu đã có trong hệ thống.');
+      }catch(err){notify(err.message,true);}finally{$('sample-reports-btn').disabled=false;}
+    };
+  }
   $('import-reports-file').onchange=async e=>{
     const file=e.target.files[0];if(!file)return;
     $('import-reports').disabled=true;
